@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Yeseva One", cursive;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+button {
+  background: #E3B873;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-style: italic;
+  cursor: pointer;
+}
+button.btn-default {
+  padding: 13px 33px;
+  box-shadow: 0 5px 20px rgba(227, 184, 115, 0.1);
+  white-space: nowrap !important;
+}
+button.btn-cost {
+  padding: 20px 40px;
+  margin-right: 20px;
+  font-size: 11px;
+}
+button.btn-cost:hover {
+  background-color: #e2c597;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+button.btn-submit {
+  padding: 20px 40px;
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  font-size: 11px;
+}
+button.btn-submit:hover {
+  background-color: #FFFFFF;
+  color: #131313;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.header {
+  background-color: #131313;
+}
+.header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 83px;
+}
+.header .header-content .logo {
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #E3B873;
+}
+.header .header-content .navbar ul {
+  list-style: none;
+  display: flex;
+}
+.header .header-content .navbar ul li {
+  list-style: none;
+  margin-right: 37px;
+}
+.header .header-content .navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+.header .header-content .navbar ul li a.active {
+  color: #E3B873;
+}
+.header .header-content .phone-number {
+  font-size: 11px;
+  text-align: right;
+  text-decoration-line: underline;
+  color: #E3B873;
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  height: 707px;
+  position: relative;
+  color: #FFFFFF;
+}
+.hero .hero-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.hero .hero-container .caption {
+  max-width: 600px;
+  margin-top: 194px;
+}
+.hero .hero-container .caption .title {
+  font-family: Yeseva One, cursive;
+  font-size: 40px;
+  line-height: 53px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.hero .hero-container .caption .title .colored-text {
+  color: #E3B873;
+}
+
+@media screen and (max-width: 414px) {
+  .hero .caption {
+    margin-top: 85px;
+  }
+  .hero .caption h1 {
+    font-size: 23px;
+    line-height: 1.35em;
+  }
+  .hero .caption p {
+    font-size: 14px;
+    line-height: 1.35em;
+  }
+  .hero .caption button {
+    width: 100%;
+    margin-top: 26px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+
+  .hero .caption {
+    margin-top: 85px;
+  }
+  .hero .caption h1 {
+    font-size: 23px;
+    line-height: 1.35em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .phone-number,
+nav.navbar {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
