@@ -6,18 +6,21 @@
 body {
   font-family: "Nunito Sans", sans-serif;
   margin: 0;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
 }
 
 h1, h2, h3, h4 {
   font-family: "Yeseva One", cursive;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 0 15px;
 }
 
 button {
@@ -35,26 +38,17 @@ button.btn-default {
   box-shadow: 0 5px 20px rgba(227, 184, 115, 0.1);
   white-space: nowrap !important;
 }
-button.btn-cost {
+button.btn {
   padding: 20px 40px;
   margin-right: 20px;
   font-size: 11px;
-}
-button.btn-cost:hover {
-  background-color: #e2c597;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-button.btn-submit {
-  padding: 20px 40px;
   background: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
-  font-size: 11px;
 }
-button.btn-submit:hover {
-  background-color: #FFFFFF;
-  color: #131313;
+button.btn:hover {
+  background-color: #E3B873;
+  border-color: #E3B873;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -80,7 +74,7 @@ button.btn-submit:hover {
 }
 .header .header-content .navbar ul li {
   list-style: none;
-  margin-right: 37px;
+  margin-right: 47px;
 }
 .header .header-content .navbar ul li a {
   text-decoration: none;
@@ -92,10 +86,16 @@ button.btn-submit:hover {
 .header .header-content .navbar ul li a.active {
   color: #E3B873;
 }
+.header .header-content .navbar ul li a:hover {
+  color: #E3B873;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
 .header .header-content .phone-number {
   font-size: 11px;
-  text-align: right;
   text-decoration-line: underline;
+}
+.header .header-content .phone-number a {
   color: #E3B873;
 }
 
@@ -106,7 +106,7 @@ button.btn-submit:hover {
   position: relative;
   color: #FFFFFF;
 }
-.hero .hero-container {
+.hero .hero-overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -114,49 +114,93 @@ button.btn-submit:hover {
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.hero .hero-container .caption {
-  max-width: 600px;
-  margin-top: 194px;
+.hero .hero-overlay .hero-container {
+  padding: 194px 0 200px;
 }
-.hero .hero-container .caption .title {
+.hero .hero-overlay .hero-container .caption {
+  max-width: 600px;
+  margin-left: 42px;
+}
+.hero .hero-overlay .hero-container .caption .welcome-title {
   font-family: Yeseva One, cursive;
   font-size: 40px;
   line-height: 53px;
   text-transform: uppercase;
   color: #FFFFFF;
+  margin: 0 auto 20px;
 }
-.hero .hero-container .caption .title .colored-text {
+.hero .hero-overlay .hero-container .caption .welcome-title .colored-text {
   color: #E3B873;
+}
+.hero .hero-overlay .hero-container .caption .welcome-message {
+  font-size: 22px;
+  line-height: 36px;
+}
+.hero .hero-overlay .hero-container .caption .cta {
+  margin-top: 36px;
 }
 
 @media screen and (max-width: 414px) {
-  .hero .caption {
-    margin-top: 85px;
+  .header .header-content {
+    height: 57px;
   }
-  .hero .caption h1 {
+
+  .hero {
+    height: 476px;
+    background-position: 75%;
+  }
+  .hero .hero-overlay .hero-container {
+    padding-top: 85px;
+  }
+  .hero .hero-overlay .hero-container .caption {
+    margin-left: 0;
+  }
+  .hero .hero-overlay .hero-container .caption .welcome-title {
     font-size: 23px;
     line-height: 1.35em;
   }
-  .hero .caption p {
+  .hero .hero-overlay .hero-container .caption .welcome-message {
     font-size: 14px;
-    line-height: 1.35em;
+    line-height: 135.84%;
   }
-  .hero .caption button {
-    width: 100%;
+  .hero .hero-overlay .hero-container .caption .cta .btn {
     margin-top: 26px;
+    width: 100%;
+  }
+  .hero .hero-overlay .hero-container .caption .cta .btn .hidden {
+    display: none;
   }
 }
 @media screen and (min-width: 576px) {
   .container {
     width: 540px;
   }
-
-  .hero .caption {
-    margin-top: 85px;
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .hero {
+    height: 476px;
+    background-position: 75%;
   }
-  .hero .caption h1 {
+  .hero .hero-overlay .hero-container {
+    padding-top: 85px;
+  }
+  .hero .hero-overlay .hero-container .caption {
+    margin-left: 0;
+  }
+  .hero .hero-overlay .hero-container .caption .welcome-title {
     font-size: 23px;
     line-height: 1.35em;
+  }
+  .hero .hero-overlay .hero-container .caption .welcome-message {
+    font-size: 14px;
+    line-height: 135.84%;
+  }
+  .hero .hero-overlay .hero-container .caption .cta .btn {
+    margin-top: 26px;
+    width: 100%;
+  }
+  .hero .hero-overlay .hero-container .caption .cta .btn .hidden {
+    display: none;
   }
 }
 @media screen and (min-width: 768px) {
@@ -164,20 +208,33 @@ button.btn-submit:hover {
     width: 720px;
   }
 }
-@media screen and (max-width: 768px) {
-  .phone-number,
-nav.navbar {
-    display: none;
-  }
-}
 @media screen and (min-width: 992px) {
   .container {
-    width: 960px;
+    width: 922px;
   }
 }
 @media screen and (min-width: 1200px) {
   .container {
     width: 1140px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header-content button.btn-default,
+nav.navbar {
+    display: none;
+  }
+
+  .header .header-content .phone-number {
+    text-decoration: none;
+  }
+  .header .header-content .phone-number a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1440px) {
+  .container {
+    width: 1280px;
   }
 }
 

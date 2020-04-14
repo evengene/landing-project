@@ -8,12 +8,15 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
   margin: 0;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Yeseva One', cursive;
+  font-style: normal;
+  font-weight: normal;
 }
 
 
@@ -21,9 +24,12 @@ h1, h2, h3, h4 {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 0 15px;
 }
 
+.row {
+
+}
 
 @mixin transition($property){
   -webkit-transition: $property;
@@ -47,28 +53,17 @@ button {
     white-space: nowrap !important;
   }
 
-  &.btn-cost {
+  &.btn {
     padding: 20px 40px;
     margin-right: 20px;
     font-size: 11px;
-    &:hover {
-      background-color: #e2c597;
-      @include transition(all 0.3s ease-in-out);
-    }
-  }
-
-  &.btn-submit {
-    padding: 20px 40px;
     background: transparent;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
-    font-size: 11px;
     &:hover {
-      background-color: #FFFFFF;
-      color: #131313;
+      background-color: #E3B873;
+      border-color: #E3B873;
       @include transition(all 0.3s ease-in-out);
-
-
     }
   }
 }
@@ -100,7 +95,7 @@ button {
 
         li {
           list-style: none;
-          margin-right: 37px;
+          margin-right: 47px;
 
           a {
             text-decoration: none;
@@ -112,6 +107,11 @@ button {
             &.active {
               color: #E3B873;
             }
+
+            &:hover {
+              color: #E3B873;
+              @include transition(all 0.3s ease-in-out);
+            }
           }
         }
       }
@@ -121,9 +121,12 @@ button {
 
     .phone-number {
       font-size: 11px;
-      text-align: right;
       text-decoration-line: underline;
-      color: #E3B873;
+
+
+      a{
+        color: #E3B873;
+      }
     }
 
   }
@@ -138,7 +141,11 @@ button {
   position: relative;
   color: #FFFFFF;
 
-  .hero-container {
+  &.wrap {
+
+  }
+
+  .hero-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -146,23 +153,42 @@ button {
     left: 0;
     background-color: rgb(0, 0, 0, .7);
 
-    .caption {
-      max-width: 600px;
-      margin-top: 194px;
+    .hero-container {
 
-      .title {
-        font-family: Yeseva One, cursive;
-        font-size: 40px;
-        line-height: 53px;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        .colored-text {
-          color: #E3B873;
+      padding: 194px 0 200px;
+
+
+      .caption {
+        max-width: 600px;
+        margin-left: 42px;
+
+
+        .welcome-title {
+          font-family: Yeseva One, cursive;
+          font-size: 40px;
+          line-height: 53px;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          margin: 0 auto 20px;
+          .colored-text {
+            color: #E3B873;
+          }
         }
+
+        .welcome-message {
+          font-size: 22px;
+          line-height: 36px;
+        }
+
+        .cta {
+          margin-top: 36px;
+        }
+
+
+      }
+
     }
 
-
-  }
 
 
 
@@ -175,25 +201,46 @@ button {
 
 //Responsive
 
+
 @media screen and (max-width: 414px) {
-  .hero .caption {
-    margin-top: 85px;
-    h1 {
-      font-size: 23px;
-      line-height: 1.35em;
-    }
-    p {
-      font-size: 14px;
-      line-height: 1.35em;
-    }
 
-    button {
-      width: 100%;
-      margin-top: 26px;
-
-    }
-
+  .header .header-content {
+    height: 57px;
   }
+
+  .hero {
+    height: 476px;
+    background-position: 75%;
+    .hero-overlay .hero-container {
+      padding-top: 85px;
+
+      .caption {
+        margin-left: 0;
+        .welcome-title {
+          font-size: 23px;
+          line-height: 1.35em;
+        }
+
+        .welcome-message {
+          font-size: 14px;
+          line-height: 135.84%;
+        }
+
+        .cta {
+          .btn {
+            margin-top: 26px;
+            width: 100%;
+            .hidden {
+              display: none;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+
 
 }
 
@@ -201,16 +248,41 @@ button {
   .container {
     width: 540px;
   }
+  
+}
 
-  .hero .caption {
-    margin-top: 85px;
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .hero {
+    height: 476px;
+    background-position: 75%;
+    .hero-overlay .hero-container {
+      padding-top: 85px;
 
-    h1 {
-      font-size: 23px;
-      line-height: 1.35em;
+      .caption {
+        margin-left: 0;
+        .welcome-title {
+          font-size: 23px;
+          line-height: 1.35em;
+        }
+
+        .welcome-message {
+          font-size: 14px;
+          line-height: 135.84%;
+        }
+
+        .cta {
+          .btn {
+            margin-top: 26px;
+            width: 100%;
+            .hidden {
+              display: none;
+            }
+          }
+        }
+      }
+
     }
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -219,24 +291,45 @@ button {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .phone-number,
-   nav.navbar{
-    display: none;
-  }
-}
-
-
 @media screen and (min-width: 992px) {
   .container {
-    width: 960px;
+    width: 922px;
   }
 }
+
+
 
 @media screen and (min-width: 1200px) {
   .container {
     width: 1140px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .header-content button.btn-default,
+  nav.navbar {
+    display: none;
+  }
+
+  .header .header-content .phone-number {
+    text-decoration: none;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+
+}
+
+
+
+@media screen and (min-width: 1300px) and (max-width: 1440px) {
+.container {
+  width: 1280px;
+}
+
 }
 
 
