@@ -1,3 +1,5 @@
+$defaultColor: #E3B873;
+
 //Main Styles
 
 * {
@@ -19,16 +21,10 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
-
-
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-.row {
-
 }
 
 @mixin transition($property){
@@ -38,7 +34,7 @@ h1, h2, h3, h4 {
 
 
 button {
-  background: #E3B873;
+  background: $defaultColor;
   border-radius: 2px;
   outline: none;
   border: none;
@@ -61,14 +57,12 @@ button {
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     &:hover {
-      background-color: #E3B873;
-      border-color: #E3B873;
+      background-color: $defaultColor;
+      border-color: $defaultColor;
       @include transition(all 0.3s ease-in-out);
     }
   }
 }
-
-
 
 .header {
   background-color: #131313;
@@ -83,11 +77,10 @@ button {
       font-size: 11px;
       line-height: 15px;
       text-transform: uppercase;
-      color: #E3B873;
+      color: $defaultColor;
     }
 
     .navbar {
-
 
       ul {
         list-style: none;
@@ -105,32 +98,27 @@ button {
             text-transform: uppercase;
 
             &.active {
-              color: #E3B873;
+              color: $defaultColor;
             }
 
             &:hover {
-              color: #E3B873;
+              color: $defaultColor;
               @include transition(all 0.3s ease-in-out);
             }
           }
         }
       }
-
-
     }
 
     .phone-number {
       font-size: 11px;
       text-decoration-line: underline;
 
-
-      a{
-        color: #E3B873;
+      a {
+        color: $defaultColor;
       }
     }
-
   }
-
 
 }
 
@@ -140,10 +128,6 @@ button {
   height: 707px;
   position: relative;
   color: #FFFFFF;
-
-  &.wrap {
-
-  }
 
   .hero-overlay {
     position: absolute;
@@ -157,11 +141,9 @@ button {
 
       padding: 194px 0 200px;
 
-
       .caption {
         max-width: 600px;
         margin-left: 42px;
-
 
         .welcome-title {
           font-family: Yeseva One, cursive;
@@ -183,16 +165,8 @@ button {
         .cta {
           margin-top: 36px;
         }
-
-
       }
-
     }
-
-
-
-
-
   }
 
 }
@@ -248,8 +222,10 @@ button {
   .container {
     width: 540px;
   }
-  
+
 }
+
+//landscape
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .hero {
@@ -298,7 +274,6 @@ button {
 }
 
 
-
 @media screen and (min-width: 1200px) {
   .container {
     width: 1140px;
@@ -319,7 +294,6 @@ button {
       text-decoration: none;
     }
   }
-
 
 }
 
