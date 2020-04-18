@@ -11,20 +11,23 @@ body {
   font-weight: normal;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Yeseva One", cursive;
   font-style: normal;
   font-weight: normal;
 }
 
 .container {
-  width: 100%;
+  width: 1280px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 button {
-  background: #E3B873;
+  background: #e3b873;
   border-radius: 2px;
   outline: none;
   border: none;
@@ -43,12 +46,12 @@ button.btn {
   margin-right: 20px;
   font-size: 11px;
   background: transparent;
-  color: #FFFFFF;
-  border: 1px solid #FFFFFF;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 button.btn:hover {
-  background-color: #E3B873;
-  border-color: #E3B873;
+  background-color: #e3b873;
+  border-color: #e3b873;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -66,7 +69,7 @@ button.btn:hover {
   font-size: 11px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #E3B873;
+  color: #e3b873;
 }
 .header .header-content .navbar ul {
   list-style: none;
@@ -84,10 +87,10 @@ button.btn:hover {
   text-transform: uppercase;
 }
 .header .header-content .navbar ul li a.active {
-  color: #E3B873;
+  color: #e3b873;
 }
 .header .header-content .navbar ul li a:hover {
-  color: #E3B873;
+  color: #e3b873;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -96,7 +99,7 @@ button.btn:hover {
   text-decoration-line: underline;
 }
 .header .header-content .phone-number a {
-  color: #E3B873;
+  color: #e3b873;
 }
 
 .hero {
@@ -104,7 +107,7 @@ button.btn:hover {
   background-size: cover;
   height: 707px;
   position: relative;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .hero .hero-overlay {
   position: absolute;
@@ -126,11 +129,11 @@ button.btn:hover {
   font-size: 40px;
   line-height: 53px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0 auto 20px;
 }
 .hero .hero-overlay .hero-container .caption .welcome-title .colored-text {
-  color: #E3B873;
+  color: #e3b873;
 }
 .hero .hero-overlay .hero-container .caption .welcome-message {
   font-size: 22px;
@@ -140,34 +143,11 @@ button.btn:hover {
   margin-top: 36px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .hero {
-    height: 476px;
-    background-position: 75%;
-  }
-  .hero .hero-overlay .hero-container {
-    padding-top: 85px;
-  }
-  .hero .hero-overlay .hero-container .caption {
-    margin-left: 0;
-  }
-  .hero .hero-overlay .hero-container .caption .welcome-title {
-    font-size: 23px;
-    line-height: 1.35em;
-  }
-  .hero .hero-overlay .hero-container .caption .welcome-message {
-    font-size: 14px;
-    line-height: 135.84%;
-  }
-  .hero .hero-overlay .hero-container .caption .call-to-action .btn {
-    margin-top: 26px;
-    width: 100%;
-  }
-  .hero .hero-overlay .hero-container .caption .call-to-action .btn .hidden {
-    display: none;
-  }
-}
 @media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
   .header .header-content {
     height: 57px;
   }
@@ -189,29 +169,34 @@ button.btn:hover {
     height: 476px;
     background-position: 75%;
   }
-  .hero .hero-container {
+  .hero .hero-overlay .hero-container {
     padding-top: 85px;
   }
-  .hero .hero-container .caption {
+  .hero .hero-overlay .hero-container .caption {
     margin-left: 0;
   }
-  .hero .hero-container .caption .welcome-title {
+  .hero .hero-overlay .hero-container .caption .welcome-title {
     font-size: 23px;
     line-height: 1.35em;
   }
-  .hero .hero-container .caption .welcome-message {
+  .hero .hero-overlay .hero-container .caption .welcome-message {
     font-size: 14px;
     line-height: 135.84%;
   }
-  .hero .hero-container .caption .call-to-action {
+  .hero .hero-overlay .hero-container .caption .call-to-action {
     text-align: center;
   }
-  .hero .hero-container .caption .call-to-action .btn {
+  .hero .hero-overlay .hero-container .caption .call-to-action button.btn {
     margin-top: 26px;
     width: 100%;
   }
-  .hero .hero-container .caption .call-to-action .btn .hidden {
+  .hero .hero-overlay .hero-container .caption .call-to-action button.btn .hidden {
     display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .container {
+    max-width: 100%;
   }
 }
 

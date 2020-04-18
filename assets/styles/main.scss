@@ -1,4 +1,4 @@
-$defaultColor: #E3B873;
+$defaultColor: #e3b873;
 
 //Main Styles
 
@@ -8,21 +8,24 @@ $defaultColor: #E3B873;
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Yeseva One', cursive;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Yeseva One", cursive;
   font-style: normal;
   font-weight: normal;
 }
 
 .container {
-  width: 100%;
+  width: 1280px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -31,7 +34,6 @@ h1, h2, h3, h4 {
   -webkit-transition: $property;
   transition: $property;
 }
-
 
 button {
   background: $defaultColor;
@@ -54,8 +56,8 @@ button {
     margin-right: 20px;
     font-size: 11px;
     background: transparent;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
+    color: #ffffff;
+    border: 1px solid #ffffff;
 
     &:hover {
       background-color: $defaultColor;
@@ -82,7 +84,6 @@ button {
     }
 
     .navbar {
-
       ul {
         list-style: none;
         display: flex;
@@ -120,7 +121,6 @@ button {
       }
     }
   }
-
 }
 
 .hero {
@@ -128,7 +128,7 @@ button {
   background-size: cover;
   height: 707px;
   position: relative;
-  color: #FFFFFF;
+  color: #ffffff;
 
   .hero-overlay {
     position: absolute;
@@ -136,10 +136,9 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgb(0, 0, 0, .7);
+    background-color: rgb(0, 0, 0, 0.7);
 
     .hero-container {
-
       padding: 194px 0 200px;
 
       .caption {
@@ -151,11 +150,11 @@ button {
           font-size: 40px;
           line-height: 53px;
           text-transform: uppercase;
-          color: #FFFFFF;
+          color: #ffffff;
           margin: 0 auto 20px;
 
           .colored-text {
-            color: #E3B873;
+            color: #e3b873;
           }
         }
 
@@ -170,104 +169,16 @@ button {
       }
     }
   }
-
 }
-
 
 //Responsive
 
-
-@media screen and (max-width: 414px) {
-
-
-
-
-
-}
-
-@media screen and (min-width: 576px) {
-  //.container {
-  //  width: 540px;
-  //}
-
-}
-
-//landscape
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .hero {
-    height: 476px;
-    background-position: 75%;
-
-    .hero-overlay .hero-container {
-      padding-top: 85px;
-
-      .caption {
-        margin-left: 0;
-
-        .welcome-title {
-          font-size: 23px;
-          line-height: 1.35em;
-        }
-
-        .welcome-message {
-          font-size: 14px;
-          line-height: 135.84%;
-        }
-
-        .call-to-action {
-          .btn {
-            margin-top: 26px;
-            width: 100%;
-
-            .hidden {
-              display: none;
-            }
-          }
-        }
-      }
-
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  //.container {
-  //  width: 720px;
-  //}
-}
-
-@media screen and (min-width: 992px) {
-  //.container {
-  //  width: 922px;
-  //}
-}
-
-
-@media screen and (min-width: 1200px) {
-  //.container {
-  //  width: 1140px;
-  //}
-}
-
-@media screen and (max-width: 1200px) {
-
-
-}
-
-
-@media screen and (min-width: 1300px) and (max-width: 1440px) {
-  //.container {
-  //  width: 1280px;
-  //}
-
-}
-
-
 @media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
 
   .header {
-
     .header-content {
       height: 57px;
       nav.navbar {
@@ -285,15 +196,13 @@ button {
         display: none;
       }
     }
-
-
   }
 
   .hero {
     height: 476px;
     background-position: 75%;
 
-     .hero-container {
+    .hero-overlay .hero-container {
       padding-top: 85px;
       .caption {
         margin-left: 0;
@@ -309,12 +218,9 @@ button {
         }
 
         .call-to-action {
-
           text-align: center;
 
-
-
-          .btn {
+          button.btn {
             margin-top: 26px;
             width: 100%;
 
@@ -324,25 +230,12 @@ button {
           }
         }
       }
-
     }
   }
-
-
-
-
-
-
-
-
-
 }
-
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
-
+  .container {
+    max-width: 100%;
+  }
 }
-
-
-
-
