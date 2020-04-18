@@ -27,7 +27,7 @@ h1, h2, h3, h4 {
   padding: 0 15px;
 }
 
-@mixin transition($property){
+@mixin transition($property) {
   -webkit-transition: $property;
   transition: $property;
 }
@@ -56,6 +56,7 @@ button {
     background: transparent;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
+
     &:hover {
       background-color: $defaultColor;
       border-color: $defaultColor;
@@ -152,6 +153,7 @@ button {
           text-transform: uppercase;
           color: #FFFFFF;
           margin: 0 auto 20px;
+
           .colored-text {
             color: #E3B873;
           }
@@ -172,56 +174,21 @@ button {
 }
 
 
-
 //Responsive
 
 
 @media screen and (max-width: 414px) {
 
-  .header .header-content {
-    height: 57px;
-  }
 
-  .hero {
-    height: 476px;
-    background-position: 75%;
-    .hero-overlay .hero-container {
-      padding-top: 85px;
-
-      .caption {
-        margin-left: 0;
-        .welcome-title {
-          font-size: 23px;
-          line-height: 1.35em;
-        }
-
-        .welcome-message {
-          font-size: 14px;
-          line-height: 135.84%;
-        }
-
-        .call-to-action {
-          .btn {
-            margin-top: 26px;
-            width: 100%;
-            .hidden {
-              display: none;
-            }
-          }
-        }
-      }
-
-    }
-  }
 
 
 
 }
 
 @media screen and (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
+  //.container {
+  //  width: 540px;
+  //}
 
 }
 
@@ -231,11 +198,13 @@ button {
   .hero {
     height: 476px;
     background-position: 75%;
+
     .hero-overlay .hero-container {
       padding-top: 85px;
 
       .caption {
         margin-left: 0;
+
         .welcome-title {
           font-size: 23px;
           line-height: 1.35em;
@@ -250,6 +219,7 @@ button {
           .btn {
             margin-top: 26px;
             width: 100%;
+
             .hidden {
               display: none;
             }
@@ -262,51 +232,116 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
+  //.container {
+  //  width: 720px;
+  //}
 }
 
 @media screen and (min-width: 992px) {
-  .container {
-    width: 922px;
-  }
+  //.container {
+  //  width: 922px;
+  //}
 }
 
 
 @media screen and (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
+  //.container {
+  //  width: 1140px;
+  //}
 }
 
 @media screen and (max-width: 1200px) {
 
-  .header-content button.btn-default,
-  nav.navbar {
-    display: none;
-  }
-
-  .header .header-content .phone-number {
-    text-decoration: none;
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-  }
 
 }
-
 
 
 @media screen and (min-width: 1300px) and (max-width: 1440px) {
-.container {
-  width: 1280px;
-}
+  //.container {
+  //  width: 1280px;
+  //}
 
 }
 
 
+@media screen and (max-width: 768px) {
+
+  .header {
+
+    .header-content {
+      height: 57px;
+      nav.navbar {
+        display: none;
+      }
+      .phone-number {
+        text-decoration: none;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      button.btn-default {
+        display: none;
+      }
+    }
+
+
+  }
+
+  .hero {
+    height: 476px;
+    background-position: 75%;
+
+     .hero-container {
+      padding-top: 85px;
+      .caption {
+        margin-left: 0;
+
+        .welcome-title {
+          font-size: 23px;
+          line-height: 1.35em;
+        }
+
+        .welcome-message {
+          font-size: 14px;
+          line-height: 135.84%;
+        }
+
+        .call-to-action {
+
+          text-align: center;
+
+
+
+          .btn {
+            margin-top: 26px;
+            width: 100%;
+
+            .hidden {
+              display: none;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+
+}
 
 
 

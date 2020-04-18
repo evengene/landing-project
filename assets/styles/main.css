@@ -136,46 +136,10 @@ button.btn:hover {
   font-size: 22px;
   line-height: 36px;
 }
-.hero .hero-overlay .hero-container .caption .cta {
+.hero .hero-overlay .hero-container .caption .call-to-action {
   margin-top: 36px;
 }
 
-@media screen and (max-width: 414px) {
-  .header .header-content {
-    height: 57px;
-  }
-
-  .hero {
-    height: 476px;
-    background-position: 75%;
-  }
-  .hero .hero-overlay .hero-container {
-    padding-top: 85px;
-  }
-  .hero .hero-overlay .hero-container .caption {
-    margin-left: 0;
-  }
-  .hero .hero-overlay .hero-container .caption .welcome-title {
-    font-size: 23px;
-    line-height: 1.35em;
-  }
-  .hero .hero-overlay .hero-container .caption .welcome-message {
-    font-size: 14px;
-    line-height: 135.84%;
-  }
-  .hero .hero-overlay .hero-container .caption .cta .btn {
-    margin-top: 26px;
-    width: 100%;
-  }
-  .hero .hero-overlay .hero-container .caption .cta .btn .hidden {
-    display: none;
-  }
-}
-@media screen and (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
-}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .hero {
     height: 476px;
@@ -195,35 +159,21 @@ button.btn:hover {
     font-size: 14px;
     line-height: 135.84%;
   }
-  .hero .hero-overlay .hero-container .caption .cta .btn {
+  .hero .hero-overlay .hero-container .caption .call-to-action .btn {
     margin-top: 26px;
     width: 100%;
   }
-  .hero .hero-overlay .hero-container .caption .cta .btn .hidden {
+  .hero .hero-overlay .hero-container .caption .call-to-action .btn .hidden {
     display: none;
   }
 }
-@media screen and (min-width: 768px) {
-  .container {
-    width: 720px;
+@media screen and (max-width: 768px) {
+  .header .header-content {
+    height: 57px;
   }
-}
-@media screen and (min-width: 992px) {
-  .container {
-    width: 922px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .header-content button.btn-default,
-nav.navbar {
+  .header .header-content nav.navbar {
     display: none;
   }
-
   .header .header-content .phone-number {
     text-decoration: none;
   }
@@ -231,10 +181,37 @@ nav.navbar {
     color: #fff;
     text-decoration: none;
   }
-}
-@media screen and (min-width: 1300px) and (max-width: 1440px) {
-  .container {
-    width: 1280px;
+  .header .header-content button.btn-default {
+    display: none;
+  }
+
+  .hero {
+    height: 476px;
+    background-position: 75%;
+  }
+  .hero .hero-container {
+    padding-top: 85px;
+  }
+  .hero .hero-container .caption {
+    margin-left: 0;
+  }
+  .hero .hero-container .caption .welcome-title {
+    font-size: 23px;
+    line-height: 1.35em;
+  }
+  .hero .hero-container .caption .welcome-message {
+    font-size: 14px;
+    line-height: 135.84%;
+  }
+  .hero .hero-container .caption .call-to-action {
+    text-align: center;
+  }
+  .hero .hero-container .caption .call-to-action .btn {
+    margin-top: 26px;
+    width: 100%;
+  }
+  .hero .hero-container .caption .call-to-action .btn .hidden {
+    display: none;
   }
 }
 
