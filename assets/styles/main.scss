@@ -1,9 +1,10 @@
+
+$darkFontColor: #363636;
 $defaultColor: #e3b873;
 $whiteColor: #fff;
 
 
 //Main Styles
-
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -15,9 +16,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
+  counter-reset: number;
 }
-
-
 
 h1,
 h2,
@@ -28,10 +28,35 @@ h4 {
   font-weight: normal;
 }
 
+h4 {
+  margin: 0;
+}
+
 .container {
   width: 1280px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  li {
+    list-style: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+@mixin fontYeseva {
+  font-family: "Yeseva One", cursive;
 }
 
 @mixin dark-overlay {
@@ -52,22 +77,38 @@ h4 {
   text-align: center;
 }
 
-@mixin header-main3 {
-  font-size: 20px;
-  line-height: 28px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 @mixin header3() {
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 25px;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-button {
+.title-icon {
+  margin-bottom: 31px;
+  text-align: center;
+  &:before {
+    content: '';
+    background-image: url("../images/icons/icon_1.svg");
+    display: inline-block;
+    height: 3px;
+    margin: 25px auto 15px;
+    width: 32px;
+  }
+  &:after {
+    content: '';
+    background-image: url("../images/icons/icon_1.svg");
+    display: inline-block;
+    height: 3px;
+    margin: 25px auto 15px;
+    width: 32px;
+  }
+  img {
+    padding: 0 10px;
+  }
+}
+
+button, .button {
   background: $defaultColor;
   border-radius: 2px;
   outline: none;
@@ -76,13 +117,11 @@ button {
   text-transform: uppercase;
   font-style: italic;
   cursor: pointer;
-
   &.btn-default {
     padding: 13px 33px;
     box-shadow: 0 5px 20px rgba(227, 184, 115, 0.1);
     white-space: nowrap !important;
   }
-
   &.btn {
     padding: 20px 40px;
     margin-right: 20px;
@@ -90,7 +129,6 @@ button {
     background: transparent;
     color: #ffffff;
     border: 1px solid #ffffff;
-
     &:hover {
       background-color: $defaultColor;
       border-color: $defaultColor;
@@ -99,38 +137,55 @@ button {
   }
 }
 
+input {
+  height: 26px;
+  border: 0;
+  border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+  border-radius: 0;
+  padding: 0 14px 0 0;
+  max-width: 231px;
+  font-size: 14px;
+  line-height: 23px;
+  color: #363636;
+  background: transparent;
+}
+
+input.submit-button {
+  height: 50px;
+  box-shadow: 0 15px 15px rgba(227, 184, 115, 0.15);
+  border-bottom: 0;
+  max-width: 200px;
+  font-style: normal;
+  border: none;
+  color: #fff;
+  width: 100%;
+  font-size: 13px;
+  line-height: 51px;
+}
+
 .header {
   background-color: #131313;
-
   .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 83px;
-
     .logo {
       font-size: 11px;
       line-height: 15px;
       text-transform: uppercase;
       color: $defaultColor;
     }
-
     .navbar {
       ul {
-        list-style: none;
-        display: flex;
-
         li {
           list-style: none;
           margin-right: 47px;
-
           a {
-            text-decoration: none;
             color: white;
             font-size: 11px;
             line-height: 15px;
             text-transform: uppercase;
-
             &:hover {
               color: $defaultColor;
               @include transition(all 0.3s ease-in-out);
@@ -139,11 +194,9 @@ button {
         }
       }
     }
-
     .phone-number {
       font-size: 11px;
       text-decoration-line: underline;
-
       a {
         color: $defaultColor;
       }
@@ -157,17 +210,13 @@ button {
   height: 707px;
   position: relative;
   color: #ffffff;
-
   .hero-overlay {
-   @include dark-overlay;
-
+    @include dark-overlay;
     .hero-container {
       padding: 194px 0 200px;
-
       .caption {
         max-width: 600px;
         margin-left: 42px;
-
         .welcome-title {
           font-family: Yeseva One, cursive;
           font-size: 40px;
@@ -175,17 +224,14 @@ button {
           text-transform: uppercase;
           color: #ffffff;
           margin: 0 auto 20px;
-
           .colored-text {
             color: #e3b873;
           }
         }
-
         .welcome-message {
           font-size: 22px;
           line-height: 36px;
         }
-
         .call-to-action {
           margin-top: 36px;
         }
@@ -194,25 +240,19 @@ button {
   }
 }
 
-.portfolio {
-
+.projects {
   padding-top: 107px;
-  display: flex;
-  height: 1074px;
+  padding-bottom: 414px;
   background-color: black;
   color: white;
-
   .project-locations {
+    margin: 0 54px 45px 0;
     ul {
-      list-style: none;
-      display: flex;
       justify-content: flex-end;
-
-      li{
+      li {
         list-style: none;
         margin: auto 30px auto 45px;
         a {
-          //color: $defaultColor;
           font-family: "Yeseva One", cursive;
           font-size: 14px;
           line-height: 19px;
@@ -223,24 +263,19 @@ button {
             padding-bottom: 7px;
             border-bottom: 1px solid $defaultColor;
             @include transition(all 0.3s ease-in-out);
-            cursor: pointer;
           }
         }
-
       }
     }
   }
-
   .content {
-
-    margin: 50px auto;
     display: flex;
-
-    .inner {
+    margin: 0 42px;
+    .project-description {
       flex-basis: 50%;
       padding-right: 50px;
       flex-direction: row;
-      h2{
+      h2 {
         font-size: 27px;
         line-height: 37px;
         letter-spacing: -0.07em;
@@ -248,8 +283,7 @@ button {
         color: $defaultColor;
         margin-top: 0;
       }
-
-      p{
+      p {
         font-size: 14px;
         line-height: 27px;
         color: #FFFFFF;
@@ -257,12 +291,10 @@ button {
           display: block;
         }
       }
-
       .hidden-slider {
         display: none;
         position: relative;
-        margin-top: 59px;
-
+        margin-top: 70px;
         a {
           background: $defaultColor;
           border-radius: 50%;
@@ -270,62 +302,50 @@ button {
           height: 36px;
           padding: 12px;
           color: #fff;
-          text-decoration: none;
           position: absolute;
           cursor: pointer;
-
           &.slider-prev {
             top: 40%;
             margin-left: 14px;
             padding-left: 9px;
           }
-
           &.slider-next {
             top: 40%;
             right: 0;
             margin-right: 14px;
             padding-right: 9px;
           }
-
           & img {
             display: block;
             margin: auto;
           }
         }
       }
-
       .project-details {
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto 80px;
-
         .project-features {
           flex-basis: 50%;
           flex-direction: column;
           font-size: 13px;
           line-height: 21px;
-
           h3 {
             @include header3;
             color: $defaultColor;
             margin-bottom: 9px;
             margin-top: 34px;
           }
-
         }
-
       }
-
       .slider-navigation {
         display: inline-block;
         ul {
           padding: 0;
           margin: 0;
-
           li {
             display: inline-block;
             list-style: none;
-
             .arrow {
               &.left {
                 margin-right: 12px;
@@ -333,15 +353,12 @@ button {
               &.right {
                 margin-left: 12px;
               }
-
               img {
                 width: 42px;
                 vertical-align: middle;
               }
             }
-
             .dot {
-              cursor: pointer;
               height: 10px;
               width: 10px;
               margin: 0 9px;
@@ -349,83 +366,39 @@ button {
               border-radius: 50%;
               display: inline-block;
               transition: background-color 0.6s ease;
-
               &:hover {
                 background-color: #FFFFFF;
               }
             }
           }
-
         }
       }
     }
-
-
-    .portfolio-image {
-
+    .project-image {
       justify-content: flex-end;
       flex-direction: row;
       flex-basis: 50%;
-
     }
-
-
   }
-
-
-
 }
 
 .camera-control {
-  margin-top: -330px;
-
+  margin-top: -327px;
   .wrap {
     @include text-center;
     max-width: 817px;
     margin: auto;
-
     h3 {
-      @include header-main3;
+      @include header3;
+      line-height: 28px;
       color: $whiteColor;
     }
-
-    .header-icon {
-
-      &:before {
-        content: '';
-        background-image: url("../images/icons/icon_1.svg");
-        display: inline-block;
-        height: 3px;
-        margin: 25px auto 15px;
-        width: 32px;
-
-      }
-
-      &:after {
-        content: '';
-        background-image: url("../images/icons/icon_1.svg");
-        display: inline-block;
-        height: 3px;
-        margin: 25px auto 15px;
-        width: 32px;
-      }
-
-      img {
-        padding: 0 10px;
-      }
-
-    }
-
     .camera-control-img {
-      margin-top: 32px;
-      margin-bottom: 62px;
-
+      margin: 31px auto 62px;
       position: relative;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       &::before {
         content: '';
         position: absolute;
@@ -438,11 +411,7 @@ button {
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 1;
       }
-
-      &:after {
-
-      }
-
+      &:after {}
       .img-overlay {
         filter: drop-shadow(0px 20px 50px rgba(0, 0, 0, 0.15));
         position: relative;
@@ -456,64 +425,57 @@ button {
         padding: 29px;
         position: absolute;
         z-index: 2;
-
-
         .play-icon {
           background-image: url("../images/icons/Polygon.svg");
           height: 25px;
           width: 21px;
           display: inline-block;
         }
-
       }
-
     }
-
     .break-line {
       width: 55px;
-
       border-top: 1px solid $defaultColor;
       border-radius: 30px;
-
       border-bottom: 0;
-
     }
-
     p {
       font-size: 18px;
       line-height: 37px;
       color: #363636;
-      padding: 40px 84px 84px;
-      margin: 0;
+      margin: 25px 84px 91px 84px;
+    }
+
+    .video {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
     }
 
     form {
-
       .form-group {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-
         .form-input {
           text-align: left;
-
           label {
             font-size: 13px;
             line-height: 21px;
             color: rgba(54, 54, 54, 0.5);
             input {
-              height: 26px;
+
               display: flex;
               border: 0;
               border-bottom: 1px solid rgba(54, 54, 54, 0.3);
               border-radius: 0;
-              padding-left: 0;
+              padding: 0 14px 0 0;
               max-width: 231px;
-              font-size: 14px;
-              line-height: 23px;
-              color: #363636;
 
+
+              color: #363636;
               &::placeholder {
                 color: #363636;
                 font-size: 14px;
@@ -524,15 +486,12 @@ button {
         }
       }
       .form-checkbox {
-        margin-top: 33px;
-
-
+        margin-top: 34px;
         .checkbox-label {
           position: relative;
           display: inline-block;
-          padding-left: 36px;
-
-
+          padding-left: 29px;
+          font-size: 14px;
           &:before {
             content: '';
             display: block;
@@ -544,7 +503,6 @@ button {
             border-radius: 1px;
             border: 1px solid $defaultColor;
           }
-
           &:after {
             content: '';
             display: block;
@@ -559,58 +517,16 @@ button {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
           }
-
         }
-
         input[type="checkbox"] {
           display: none;
-
-
-          &:checked + label:before {
+          &:checked+label:before {
             background: $defaultColor;
             border-radius: 1px;
-
           }
         }
-
-
-        //input[type=checkbox],
-        //input[type=checkbox] + label {
-        //  display: inline-block;
-        //  vertical-align: middle;
-        //  cursor: pointer;
-        //  user-select: none;
-        //
-        //  &:before {
-        //    content: "\2713";
-        //    border-radius: 2px;
-        //    background: $defaultColor;
-        //    display: inline-block;
-        //    vertical-align: middle;
-        //    width: 20px;
-        //    margin-right: 10px;
-        //    text-align: center;
-        //    font-size: 12px;
-        //    padding: 6px;
-        //    color: #e4efe5;
-        //
-        //  }
-        //
-        //
-        //  input:checked + label:before {
-        //    background: #288619;
-        //    color: #FFF;
-        //  }
-        //
-        //  input[type=checkbox][disabled] + label:before {
-        //    color: #d0d0d0;
-        //    background: #bfbfbf;
-        //    border: 1px solid #656b64;
-        ////  }
-        //}
       }
     }
-
     input {
       width: 100%;
       font-size: 13px;
@@ -625,30 +541,325 @@ button {
       border: 1px solid #e0e0e0;
       background: #fff;
     }
-
     .submit-button {
-      background: $defaultColor;
-      color: $whiteColor;
       box-shadow: 0 15px 15px rgba(227, 184, 115, 0.15);
-      border-radius: 2px;
       border-bottom: 0;
       max-width: 200px;
+      font-style: normal;
+      border: none;
+      background: $defaultColor;
+      color: $whiteColor;
+    }
+  }
+}
+
+.services {
+  margin: 75px auto 147px;
+  background-image: url("../images/sketch.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 800px;
+
+  .service-types {
+    h3 {
+      @include header3;
+      text-align: center;
+    }
+    .cards {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .card-block {
+        max-width: 392px;
+        position: relative;
+        .card-inner {
+          position: relative;
+          text-align: left;
+          padding: 25px 34px 50px;
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+          margin: -133px auto 0 auto;
+          background: $whiteColor;
+          max-width: 330px;
+
+          h4 {
+            color: $darkFontColor;
+            @include fontYeseva;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            list-style: none;
+            margin-bottom: 10px;
+          }
+          .card-inner-list {
+            display: inline-block;
+            margin: 0;
+            padding-left: 15px;
+            li {
+              list-style-type: disc;
+              font-size: 13px;
+              line-height: 27px;
+              color: #959595;
+
+            }
+          }
+        }
+        .card-label {
+          position: absolute;
+          left: 0;
+          bottom: -25px;
+          margin-left: 25px;
+          color: $whiteColor;
+          background: $defaultColor;
+          padding: 10px 21px;
+          max-width: fit-content;
+          height: 54px;
+          box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
+          @include fontYeseva;
+          display: inline-block;
+          font-size: 18px;
+          line-height: 25px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .estimate-form {
+    margin: 230px auto 14px auto;
+    display: flex;
+    max-height: 539px;
+    .estimate-features {
+      flex-basis: 60%;
+      .estimate-features-list {
+        margin-left: 220px;
+        max-width: 70%;
+        .item {
+          font-size: 14px;
+          line-height: 19px;
+          margin-bottom: 36px;
+          position: relative;
+          overflow: hidden;
+          padding: 20px;
+
+          .item-number {
+            content: '';
+            background: #e3b873;
+            width: 42px;
+            height: 42px;
+            border-radius: 100%;
+            padding: 24px;
+            z-index: 2;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: #FFFFFF;
+            border: 8px solid #FFFFFF;
+            box-shadow: 0 5px 15px rgba(227, 184, 115, 0.15);
+
+            &::before {
+              counter-increment: number;
+              content: "0" counter(number) " ";
+              position: absolute;
+              left: 14px;
+              top: 14px;
+              @include fontYeseva;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 25px;
+
+            }
+
+            &:after {
+
+
+            }
+
+          }
+
+          .item-text {
+            display: inline-block;
+            max-width: 70%;
+            vertical-align: middle;
+            margin-left: 17px;
+          }
+
+
+        }
+      }
+    }
+
+
+    .estimate-submit {
+      background: #131313;
+      color: $whiteColor;
+      flex-basis: 40%;
+      padding: 28px 49px;
+
+      h4 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: Nunito Sans;;
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      #boxed-form {
+
+        &:last-child {
+          margin-bottom: 10px;
+        }
+
+        .form-group {
+          position: relative;
+          margin-top: 48px;
+
+
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            line-height: 21px;
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+          input {
+
+            max-width: 100%;
+            width: 100%;
+
+            outline: none;
+            color: $whiteColor;
+            border-color: rgba(255, 255, 255, 0.15);
+
+            &::placeholder {
+              color: $whiteColor;
+
+            }
+
+          }
+
+
+        }
+
+        .form-checkbox {
+          margin-top: 15px;
+
+          .checkbox-label {
+            position: relative;
+            display: inline-block;
+            padding-left: 29px;
+            font-size: 14px;
+
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: -2px;
+              left: 0;
+              width: 18px;
+              height: 18px;
+              border-radius: 1px;
+              border: 1px solid $defaultColor;
+              background: $defaultColor;
+            }
+
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0px;
+              left: 6px;
+              width: 5px;
+              height: 8px;
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+
+            }
+          }
+
+          input[type="checkbox"] {
+            box-sizing: border-box;
+            display: none;
+
+            &:checked {
+              display: none;
+            }
+
+            &:checked + label:before {
+              content: '';
+              background: $defaultColor;
+              border-radius: 1px;
+            }
+
+            &:checked + label:after {
+              display: none;
+            }
+
+          }
+        }
+
+        .submit-button {
+          max-width: 213px !important;
+          float: right;
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+
+  .info {
+    float: right;
+    margin-right: 60px;
+
+    .savings-badge {
+      background: #e3b873;
+      width: 72px;
+      height: 72px;
+      border-radius: 100%;
+      padding: 29px;
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      img {
+        max-width: fit-content;
+        position: relative;
+        left: -12px;
+        top: -11px;
+      }
+
+    }
+    p {
+      color: $defaultColor;
+      display: inline-block;
+      margin-left: 25px;
+      vertical-align: middle;
+      max-width: 50%;
     }
   }
 
 }
 
-
-
-
-
 //Responsive
-
 @media screen and (max-width: 768px) {
+  h3 {
+    font-size: 22px !important;
+  }
+
+
   .container {
     max-width: 100%;
   }
-
   .header {
     .header-content {
       height: 57px;
@@ -657,10 +868,8 @@ button {
       }
       .phone-number {
         text-decoration: none;
-
         a {
           color: #fff;
-          text-decoration: none;
         }
       }
       button.btn-default {
@@ -668,38 +877,32 @@ button {
       }
     }
   }
-
   .hero {
     height: 476px;
     background-position: 75%;
-
     .hero-overlay {
       top: -1px;
       bottom: -1px;
-
       .hero-container {
         padding-top: 85px;
-
         .caption {
-          margin-left: 0;
-
+          text-align: center;
+          margin: auto;
           .welcome-title {
             font-size: 23px;
             line-height: 1.35em;
           }
-
           .welcome-message {
             font-size: 14px;
             line-height: 135.84%;
           }
-
           .call-to-action {
+            max-width: 100%;
+            margin: 36px auto;
             text-align: center;
-
             button.btn {
               margin-top: 26px;
               width: 100%;
-
               .hidden {
                 display: none;
               }
@@ -709,34 +912,26 @@ button {
       }
     }
   }
-
-  .portfolio {
-    padding-top: 36px;
-    height: 1553px;
-
+  .projects {
+    padding: 36px 0 325px;
+    text-align: center;
     .project-locations {
       display: none;
-    .content {
-
     }
-  }
     .content {
-      flex-wrap: wrap;
-      .inner {
-        flex-basis: auto;
-        flex-direction: column;
+      display: block;
+      margin: 0;
+      .project-description {
         padding: 0;
-
         h2 {
           font-size: 22px;
           line-height: 138.6%;
-          @include text-center;
         }
+
         p {
           padding: 0 17px;
           font-size: 11px;
           line-height: 158.48%;
-          @include text-center;
           span {
             display: inline;
           }
@@ -746,29 +941,122 @@ button {
           display: inline-block;
         }
 
-        .project-details .project-features h3 {
-          font-size: 14px;
-          line-height: 138.6%;
+        .project-details {
+
+          text-align: left;
+          .project-features h3 {
+            font-size: 14px;
+            line-height: 138.6%;
+          }
         }
         .slider-navigation {
           display: none;
         }
 
-
       }
-      .portfolio-image {
+      .project-image {
         display: none;
       }
+
+    }
+  }
+  .camera-control {
+    background: black;
+    .wrap {
+      .camera-control-img {
+        margin-bottom: 28px;
+      }
+
+
+
+      p {
+        font-size: 11px;
+        line-height: 169.8%;
+        color: $whiteColor;
+        margin: auto;
+      }
+
+      form {
+        color: white;
+        padding-bottom: 80px;
+        .form-group {
+          align-items: stretch;
+          flex-direction: column;
+          position: relative;
+          .form-input {
+            margin-top: 63px;
+            label {
+              color: rgba(255, 255, 255, 0.5);
+              input {
+                max-width: 100%;
+                background: black;
+                border-color: $whiteColor;
+
+                &::placeholder {
+                  color: $whiteColor;
+                }
+              }
+            }
+          }
+          .submit-button {
+            position: absolute;
+            bottom: -152px;
+            max-width: 100%;
+          }
+        }
+        .form-checkbox {
+          margin-top: 26px;
+          text-align: left;
+          .checkbox-label:before {
+            top: -3px;
+          }
+          .checkbox-label:after {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+  .services .container {
+
+    .service-types {
+      .cards {
+        flex-direction: column;
+
+        .card-block {
+          margin-bottom: 80px;
+          .card-inner {
+            margin: -133px 70px auto -1px;
+          }
+          .card-label {
+            font-size: 15px;
+            height: 40px;
+            padding: 6px 16px;
+            line-height: 138.6%;
+          }
+        }
+      }
+    }
+    .estimate-form, .info {
+      display: none;
     }
 
 
 
 
   }
+
+
+
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .container {
     max-width: 100%;
   }
+
+
+
 }
