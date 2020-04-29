@@ -13,24 +13,25 @@
 </head>
 
 <body>
-<header class="header">
-    <div class="container header-content">
-        <div class="logo">IC "Repair Design Project"</div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="" target="" title="">Home</a></li>
-                <li><a href="" target="" title="">Projects</a></li>
-                <li><a href="" target="" title="">Measurement</a></li>
-                <li><a href="" target="" title="">Team</a></li>
-                <li><a href="" target="" title="">Reviews</a></li>
-                <li><a href="" target="" title="">Contacts</a></li>
-            </ul>
-        </nav>
-        <span class="phone-number"><a href="#">+7 (928) 768-32-39</a></span>
-        <button class="btn-default">Request a call</button>
-    </div>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">IC "Repair Design Project"</div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="" target="" title="">Home</a></li>
+                    <li><a href="" target="" title="">Projects</a></li>
+                    <li><a href="" target="" title="">Measurement</a></li>
+                    <li><a href="" target="" title="">Team</a></li>
+                    <li><a href="" target="" title="">Reviews</a></li>
+                    <li><a href="" target="" title="">Contacts</a></li>
+                </ul>
+            </nav>
+            <span class="phone-number"><a href="#">+7 (928) 768-32-39</a></span>
+            <button class="btn-default">Request a call</button>
+        </div>
 </header>
-<main>
+    <main>
+    <!--Intro-->
     <section class="hero">
         <div class="hero-overlay">
             <div class="hero-container">
@@ -52,7 +53,7 @@
             </div>
         </div>
     </section>
-    <!--    Projects-->
+    <!--Projects-->
     <section class="projects">
         <div class="container">
             <nav class="project-locations">
@@ -67,13 +68,11 @@
                     <h2>Completed<br>projects</h2>
                     <p><span>Only a small part of the work performed by our company is presented </span>
                         <span>on the site. For 14 years on in the construction </span> market we have made happy more than 1000 families</p>
-
                     <div class="hidden-slider">
-                        <a href="#" class="slider-prev"><img src="./assets/images/slider/left-white.svg"></a>
-                        <a href="#" class="slider-next"><img src="./assets/images/slider/right-white.svg"></a>
-                        <img class="hidden-img" src="assets/images/slider/project2.jpg" alt="">
+                        <a href="#" class="slider-prev"><img src="./assets/images/slider/hidden-arrow-left.svg"></a>
+                        <a href="#" class="slider-next"><img src="./assets/images/slider/hidden-arrow-right.svg"></a>
+                        <img class="hidden-img" src="assets/images/slider/slider2thumb.jpg" alt="portfolio">
                     </div>
-
                     <div class="project-details">
                         <div class="project-features">
                             <h3>City:</h3> Rostov-on-Don
@@ -106,44 +105,28 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="project-image">
-                    <img src="./assets/images/slider/project1.jpg" alt="project 1">
-                </div>
+                <div class="project-image"></div>
             </div>
         </div>
     </section>
-
     <!--Camera Control-->
     <section class="camera-control">
-
         <div class="container">
-
             <div class="wrap">
                 <h3>online control</h3>
                 <div class="title-icon">
-                    <img class="" src="assets/images/icons/icon_1_1.svg" alt="">
+                    <img src="assets/images/icons/camera-icon.svg">
                 </div>
-
                 <!--Video-->
-                <div class="camera-control-img">
-
-
-                    <img class="img-overlay" src="assets/images/online-control.jpg" alt="">
-                    <a class="play-button"><span class="play-icon"></span></a>
+                <div class="video-container">
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/eZkSyoicZgg?&autoplay=1" frameborder="0" allowfullscreen></iframe>
                 </div>
-
-
                 <hr class="break-line">
-
-
-                <iframe src="https://www.youtube.com/embed/MSOmdwLWzj0" width="420" height="315"></iframe>
                 <p>
                     At each facility, a camera is installed that broadcasts the progress of work on the clock. At any time, you can go to our website and monitor the progress of work in your apartment. You can watch the live broadcast from one of our facilities! Leave a request below and you will receive a link to the broadcast.
                 </p>
-
                 <form>
                     <div class="form-group">
-
                         <div class="form-input">
                             <label>Name:
                                 <input class="" type="text" name="Name" size="30" maxlength="100" placeholder="What's your name:">
@@ -153,31 +136,25 @@
                             <label>Email:
                                 <input class="" type="email" name="Email" size="30" maxlength="100" placeholder="Your phone number:">
                             </label>
-
                         </div>
-
                         <input class="submit-button button" type="submit" value="Submit">
-
                     </div>
-
                     <div class="form-checkbox">
-                        <input type="checkbox" class="checkbox-icon" id="checkbox" name="subscribe" checked>
+                        <input type="checkbox" class="checkbox-icon" id="checkbox" name="subscribe">
                         <label class="checkbox-label" for="checkbox">I agree to the processing of personal data
                         </label>
                     </div>
-
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- Services-->
+    <!--Services-->
     <section class="services">
         <div class="container">
             <div class="service-types">
                 <h3>types of repair</h3>
                 <div class="title-icon">
-                    <img src="assets/images/icons/repair-icon.svg" alt="repair icon">
+                    <img src="assets/images/icons/repair-icon.svg">
                 </div>
                 <div class="cards">
                     <div class="card-block"><img src="assets/images/portfolio/image-1.jpg" alt="portfolio image">
@@ -250,56 +227,43 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="estimate-submit">
-
-
-                        <h4>Leave a request for free <br>departure of the measurer</h4>
-
-                        <form id="boxed-form">
-
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="Name" size="30" maxlength="100" placeholder="What's your name:">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" name="Phone" placeholder="Your phone number:">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" name="rhEmail" placeholder="Your email:">
-                            </div>
-
-                            <div class="form-checkbox">
-                                <input type="checkbox" class="checkbox-icon" id="checkbox-2" name="subscribe" checked>
-                                <label class="checkbox-label" for="checkbox-2">I agree to the processing of personal data
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <input class="submit-button button" type="submit" value="Call the measurer">
-
-                            </div>
-
-                        </form>
-
+                    <h4>Leave a request for free <br>departure of the measurer</h4>
+                    <form id="boxed-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="Name" size="30" maxlength="100" placeholder="What's your name:">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" name="Phone" placeholder="Your phone number:">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="rhEmail" placeholder="Your email:">
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="checkbox-icon" id="checkbox-2" name="subscribe" checked>
+                            <label class="checkbox-label" for="checkbox-2">I agree to the processing of personal data
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input class="submit-button button" type="submit" value="Call the measurer">
+                        </div>
+                    </form>
                 </div>
-
             </div>
             <div class="info">
-                <div class="savings-badge"><img src="assets/images/icons/savings.svg" alt="repair icon">
+                <div class="savings-badge"><img src="assets/images/icons/savings-icon.svg">
                 </div>
                 <p>Help save 10 - 20% of the cost of materials</p>
             </div>
         </div>
-
     </section>
-
-
+    <section class="portfolio">
+    </section>
 </main>
-<footer></footer>
+    <footer></footer>
 </body>
 
 </html>
