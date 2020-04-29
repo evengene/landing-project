@@ -739,10 +739,6 @@ input.submit-button {
 }
 
 @media screen and (max-width: 768px) {
-  h3 {
-    font-size: 22px !important;
-  }
-
   .container {
     max-width: 100%;
   }
@@ -844,9 +840,16 @@ input.submit-button {
 
   .camera-control {
     background: black;
+    margin-bottom: 88px;
+  }
+  .camera-control .wrap h3 {
+    font-size: 22px;
   }
   .camera-control .wrap .video-container {
     margin-bottom: 28px;
+  }
+  .camera-control .wrap .video-container .youtube-video {
+    height: 207px;
   }
   .camera-control .wrap p {
     font-size: 11px;
@@ -893,6 +896,9 @@ input.submit-button {
     top: 0;
   }
 
+  .services .container .service-types h3 {
+    font-size: 22px;
+  }
   .services .container .service-types .cards {
     flex-direction: column;
   }

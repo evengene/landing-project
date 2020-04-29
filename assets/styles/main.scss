@@ -768,9 +768,6 @@ input.submit-button {
 
 //Responsive
 @media screen and (max-width: 768px) {
-  h3 {
-    font-size: 22px !important;
-  }
   .container {
     max-width: 100%;
   }
@@ -870,9 +867,16 @@ input.submit-button {
   }
   .camera-control {
     background: black;
+    margin-bottom: 88px;
     .wrap {
+      h3 {
+        font-size: 22px;
+      }
       .video-container {
         margin-bottom: 28px;
+        .youtube-video {
+          height: 207px
+        }
       }
       p {
         font-size: 11px;
@@ -922,6 +926,9 @@ input.submit-button {
   }
   .services .container {
     .service-types {
+      h3{
+        font-size: 22px;
+      }
       .cards {
         flex-direction: column;
         .card-block {
