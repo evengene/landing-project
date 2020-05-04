@@ -39,13 +39,22 @@ ul li {
   list-style: none;
 }
 
+ul.list {
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
+  color: inherit;
 }
 
 img {
   max-width: 100%;
+}
+
+sup {
+  vertical-align: text-bottom;
 }
 
 .title-icon {
@@ -130,6 +139,24 @@ input.submit-button {
   width: 100%;
   font-size: 13px;
   line-height: 51px;
+}
+
+.card-label {
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  margin-left: 25px;
+  color: #fff;
+  background: #e3b873;
+  padding: 10px 21px;
+  max-width: fit-content;
+  height: 54px;
+  box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
+  font-family: "Yeseva One", cursive;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
 }
 
 .header {
@@ -487,7 +514,7 @@ input.submit-button {
 }
 
 .services {
-  margin: 75px auto 147px;
+  margin: 75px auto 325px;
   background-image: url("../images/sketch.jpg");
   background-repeat: no-repeat;
   background-position: left bottom;
@@ -539,23 +566,6 @@ input.submit-button {
   font-size: 13px;
   line-height: 27px;
   color: #959595;
-}
-.services .service-types .cards .card-block .card-label {
-  position: absolute;
-  left: 0;
-  bottom: -25px;
-  margin-left: 25px;
-  color: #fff;
-  background: #e3b873;
-  padding: 10px 21px;
-  max-width: fit-content;
-  height: 54px;
-  box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
-  font-family: "Yeseva One", cursive;
-  display: inline-block;
-  font-size: 18px;
-  line-height: 25px;
-  text-transform: uppercase;
 }
 .services .estimate-form {
   margin: 230px auto 14px auto;
@@ -731,11 +741,351 @@ input.submit-button {
 }
 
 .portfolio {
-  background-image: url("../images/hero.jpg");
+  background-image: url("../images/portfolio/portfolio_1.jpg");
   background-size: cover;
-  height: 707px;
   position: relative;
   color: #ffffff;
+  margin-bottom: 110px;
+  max-height: 864px;
+}
+.portfolio:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.portfolio .container {
+  display: flex;
+}
+.portfolio .container .portfolio-styles {
+  margin-top: 137px;
+  margin-bottom: 0;
+  margin-right: 246px;
+  z-index: 1;
+}
+.portfolio .container .portfolio-styles h3 {
+  color: #e3b873;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-bottom: 47px;
+}
+.portfolio .container .list {
+  margin: auto;
+  padding: 0;
+}
+.portfolio .container .list li {
+  margin-bottom: 25px;
+}
+.portfolio .container .list li a:hover {
+  color: #e3b873;
+  border-bottom: 1px solid #e3b873;
+}
+.portfolio .container .portfolio-row-1, .portfolio .container .portfolio-row-2 {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.portfolio .container .portfolio-row-1 img, .portfolio .container .portfolio-row-2 img {
+  max-width: 353px;
+  margin-bottom: 40px;
+}
+.portfolio .container .portfolio-row-1 {
+  margin-right: 45px;
+  margin-top: -40px;
+}
+.portfolio .container .portfolio-row-2 {
+  margin-top: -112px;
+}
+
+.testimonials {
+  padding-bottom: 354px;
+  position: relative;
+}
+.testimonials:before {
+  content: "";
+  background-image: url("../images/city-bg.png");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 628px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+}
+.testimonials h3 {
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  text-align: center;
+}
+.testimonials .testimonials-text {
+  text-align: center;
+  font-size: 18px;
+  line-height: 29px;
+  color: #363636;
+  max-width: 30%;
+  margin: -20px auto 0;
+}
+.testimonials .testimonial-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.testimonials .testimonial-cards .testimonial-card-block {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+  position: relative;
+  text-align: left;
+  padding: 25px 34px 50px;
+  margin: auto;
+  background: #fff;
+  max-width: 330px;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonial-header {
+  margin-bottom: 25px;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonial-header .client-img {
+  border-radius: 100%;
+  width: 76px;
+  height: 76px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 23px;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonial-header h4 {
+  max-width: 55%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.testimonials .testimonial-cards .testimonial-card-block p {
+  text-align: left;
+  font-size: 13px;
+  line-height: 180%;
+  color: #959595;
+  margin: 5px 0;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label {
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  line-height: 25px;
+  background-color: #e3b873;
+  font-family: "Yeseva One", cursive;
+  font-size: 17px;
+  color: #fff;
+  display: inline-block;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-left, .testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-right {
+  display: inline-block;
+  padding: 10px 12px;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-left {
+  border-right: 1px solid white;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label img, .testimonials .testimonial-cards .testimonial-card-block .testimonials-label span {
+  vertical-align: middle;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label img {
+  margin-right: 8px;
+}
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-right span {
+  vertical-align: sub;
+}
+
+.contact {
+  color: #fff;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  background-image: url("../images/contact-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0.8));
+  opacity: 0.9;
+}
+.contact .container {
+  display: flex;
+}
+.contact .inner {
+  position: relative;
+  max-width: 843px;
+  margin: auto;
+}
+.contact .inner .estimate-submit {
+  background: black;
+  position: relative;
+  padding: 35px 153px;
+  margin: -222px auto 52px;
+}
+.contact .inner .estimate-submit h3 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: #fff;
+}
+.contact .inner .estimate-submit #contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact .inner .estimate-submit #contact-form .form-group {
+  position: relative;
+  margin-top: 48px;
+  padding: 0 28px;
+}
+.contact .inner .estimate-submit #contact-form .form-group:last-child {
+  margin: 50px 0 0;
+  text-align: center;
+}
+.contact .inner .estimate-submit #contact-form .form-group.form-half {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.contact .inner .estimate-submit #contact-form .form-group.form-full {
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+.contact .inner .estimate-submit #contact-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact .inner .estimate-submit #contact-form .form-group input {
+  max-width: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.contact .inner .estimate-submit #contact-form .form-group input::placeholder {
+  color: #fff;
+}
+.contact .inner .estimate-submit #contact-form .form-group .submit-button {
+  max-width: 200px;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox {
+  margin-top: 46px;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox .checkbox-label {
+  position: relative;
+  display: inline-block;
+  padding-left: 29px;
+  font-size: 14px;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox .checkbox-label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 1px;
+  border: 1px solid #e3b873;
+  background: #e3b873;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox .checkbox-label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox input[type=checkbox] {
+  box-sizing: border-box;
+  display: none;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox input[type=checkbox]:checked {
+  display: none;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox input[type=checkbox]:checked + label:before {
+  content: "";
+  background: #e3b873;
+  border-radius: 1px;
+}
+.contact .inner .estimate-submit #contact-form .form-checkbox input[type=checkbox]:checked + label:after {
+  display: none;
+}
+.contact .inner h3 {
+  color: #e3b873;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  text-align: center;
+}
+.contact .inner .social-icons {
+  text-align: center;
+  margin: 20px auto;
+}
+.contact .inner .social-icons .list {
+  padding: 0;
+}
+.contact .inner .social-icons .list li {
+  display: inline-block;
+}
+.contact .inner .social-icons .list li .icon {
+  width: 28px;
+  height: 28px;
+  background-color: #e3b873;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  display: inline-block;
+}
+.contact .inner .social-icons .list li .icon .icon-mail {
+  position: relative;
+  background-image: url("../images/icons/mail-icon-small.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+.contact .inner .social-icons .list li .icon .icon-insta {
+  background-image: url("../images/icons/insta-icon-small.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 15px;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+.contact .inner .map iframe {
+  margin: 10px auto 67px;
+  height: 465px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
