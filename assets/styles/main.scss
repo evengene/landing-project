@@ -62,7 +62,6 @@ sup {
 }
 
 //Repeated Styles
-
 @mixin fontNunito {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -97,7 +96,6 @@ sup {
 }
 
 //Common styles
-
 .title-icon {
   margin-bottom: 31px;
   text-align: center;
@@ -821,8 +819,8 @@ input.submit-button {
       }
     }
     .portfolio-row-1 {
-      margin: -40px 45px 0 0 ;
-      .responsive-nav{
+      margin: -40px 45px 0 0;
+      .responsive-nav {
         display: none;
       }
     }
@@ -930,7 +928,6 @@ input.submit-button {
     }
   }
 }
-
 
 .contact {
   color: $whiteColor;
@@ -1118,13 +1115,8 @@ input.submit-button {
           -o-filter: grayscale(100%);
           filter: grayscale(100%);
         }
-
       }
     }
-
-
-
-
   }
 }
 
@@ -1244,7 +1236,6 @@ input.submit-button {
           height: 100%;
         }
       }
-
       .break-line {
         margin-bottom: 21px;
       }
@@ -1296,22 +1287,17 @@ input.submit-button {
   }
   .services {
     margin-bottom: 55px;
-
     .container .service-types {
       h3 {
         font-size: 22px;
       }
-
       .cards {
         flex-direction: column;
-
         .card-block {
           margin-bottom: 80px;
-
           .card-inner {
             margin: -133px 70px auto -1px;
           }
-
           .card-label {
             font-size: 15px;
             height: 40px;
@@ -1321,29 +1307,22 @@ input.submit-button {
         }
       }
     }
-
     .estimate-form,
     .info {
       display: none;
     }
-
-
   }
-
-
-
-
   .portfolio {
     background-image: none;
     margin-bottom: 0;
     &:before {
       content: none;
     }
-    .container  {
+    .container {
       flex-direction: column;
       .portfolio-styles {
         margin: 0;
-        h3{
+        h3 {
           text-align: center;
           font-size: 22px;
           margin-top: 0;
@@ -1352,7 +1331,6 @@ input.submit-button {
           display: none;
         }
       }
-
       img.hidden {
         display: none;
       }
@@ -1364,47 +1342,41 @@ input.submit-button {
           object-fit: cover;
           margin-bottom: 0;
         }
-
         .responsive-nav {
-            display: inline-block;
-            position: relative;
-            a {
-              background: $defaultColor;
-              border-radius: 50%;
-              width: 36px;
-              height: 36px;
-              padding: 12px;
-              color: #fff;
-              position: absolute;
-              cursor: pointer;
-              &.slider-prev {
-                top: 90px;
-                margin-left: 14px;
-                padding-left: 9px;
-              }
-              &.slider-next {
-                top: 90px;
-                right: 0;
-                margin-right: 14px;
-                padding-right: 9px;
-              }
-              & img {
-                display: block;
-                margin: auto;
-              }
+          display: inline-block;
+          position: relative;
+          a {
+            background: $defaultColor;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            padding: 12px;
+            color: #fff;
+            position: absolute;
+            cursor: pointer;
+            &.slider-prev {
+              top: 90px;
+              margin-left: 14px;
+              padding-left: 9px;
             }
+            &.slider-next {
+              top: 90px;
+              right: 0;
+              margin-right: 14px;
+              padding-right: 9px;
+            }
+            & img {
+              display: block;
+              margin: auto;
+            }
+          }
         }
       }
     }
-
-
-
   }
-
   .testimonials {
     display: none;
   }
-
   .contact {
     background-image: none;
     background-color: black;
@@ -1414,16 +1386,13 @@ input.submit-button {
       .estimate-submit {
         padding: 0;
         margin-top: 0;
-
         #contact-form {
           .form-group {
-
             &.form-half {
               flex: 0 0 100%;
               max-width: 100%;
               padding: 0;
             }
-
             &.form-full {
               padding: 0;
             }
@@ -1443,15 +1412,8 @@ input.submit-button {
           height: 320px;
         }
       }
-
-
     }
-
-
   }
-
-
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
