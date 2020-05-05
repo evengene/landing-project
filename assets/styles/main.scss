@@ -61,8 +61,21 @@ sup {
   vertical-align: text-bottom;
 }
 
+//Repeated Styles
+
+@mixin fontNunito {
+  font-family: "Nunito Sans", sans-serif;
+}
+
 @mixin fontYeseva {
   font-family: "Yeseva One", cursive;
+}
+
+@mixin header3() {
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 @mixin dark-overlay {
@@ -83,12 +96,7 @@ sup {
   text-align: center;
 }
 
-@mixin header3() {
-  font-size: 18px;
-  line-height: 25px;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
+//Common styles
 
 .title-icon {
   margin-bottom: 31px;
@@ -188,9 +196,7 @@ input.submit-button {
   text-transform: uppercase;
 }
 
-
-
-
+//Main Content
 .header {
   background-color: #131313;
   .header-content {
@@ -238,6 +244,7 @@ input.submit-button {
   height: 707px;
   position: relative;
   color: #ffffff;
+  margin: -1px auto;
   .hero-overlay {
     @include dark-overlay;
     .hero-container {
@@ -246,7 +253,7 @@ input.submit-button {
         max-width: 600px;
         margin-left: 42px;
         .welcome-title {
-          font-family: Yeseva One, cursive;
+          @include fontYeseva;
           font-size: 40px;
           line-height: 53px;
           text-transform: uppercase;
@@ -269,8 +276,7 @@ input.submit-button {
 }
 
 .projects {
-  padding-top: 107px;
-  padding-bottom: 414px;
+  padding: 107px 0 414px;
   background-color: black;
   color: white;
   .project-locations {
@@ -283,7 +289,7 @@ input.submit-button {
         list-style: none;
         margin-right: 30px;
         a {
-          font-family: "Yeseva One", cursive;
+          @include fontYeseva;
           font-size: 14px;
           line-height: 19px;
           text-transform: uppercase;
@@ -653,7 +659,7 @@ input.submit-button {
       h4 {
         text-align: center;
         margin-bottom: 40px;
-        font-family: Nunito Sans;
+        @include fontNunito;
         font-size: 18px;
         line-height: 26px;
       }
@@ -782,20 +788,15 @@ input.submit-button {
   }
   .container {
     display: flex;
-
     .portfolio-styles {
-      margin-top: 137px;
-      margin-bottom: 0;
-      margin-right: 246px;
+      margin: 137px 246px 0 auto;
       z-index: 1;
-
       h3 {
         color: $defaultColor;
         @include header3;
         margin-bottom: 47px;
       }
     }
-
     .list {
       margin: auto;
       padding: 0;
@@ -809,8 +810,8 @@ input.submit-button {
         }
       }
     }
-
-    .portfolio-row-1, .portfolio-row-2 {
+    .portfolio-row-1,
+    .portfolio-row-2 {
       display: flex;
       flex-direction: column;
       z-index: 1;
@@ -819,32 +820,24 @@ input.submit-button {
         margin-bottom: 40px;
       }
     }
-
     .portfolio-row-1 {
-      margin-right: 45px;
-      margin-top: -40px;
+      margin: -40px 45px 0 0 ;
+      .responsive-nav{
+        display: none;
+      }
     }
-
     .portfolio-row-2 {
       margin-top: -112px;
     }
   }
-
-
-
-
-
-
 }
 
 .testimonials {
   padding-bottom: 354px;
   position: relative;
-
-
   &:before {
     content: '';
-    background-image:  url("../images/city-bg.png");
+    background-image: url("../images/city-bg.png");
     background-repeat: repeat-x;
     background-position: left bottom;
     background-size: 628px;
@@ -854,13 +847,10 @@ input.submit-button {
     height: 100%;
     opacity: 0.05;
   }
-
-
   h3 {
     @include header3;
     @include text-center;
   }
-
   .testimonials-text {
     @include text-center;
     font-size: 18px;
@@ -868,16 +858,13 @@ input.submit-button {
     color: #363636;
     max-width: 30%;
     margin: -20px auto 0;
-
   }
-
   .testimonial-cards {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
-
     .testimonial-card-block {
       box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
       position: relative;
@@ -909,7 +896,6 @@ input.submit-button {
         color: #959595;
         margin: 5px 0;
       }
-
       .testimonials-label {
         position: absolute;
         left: 0;
@@ -922,21 +908,21 @@ input.submit-button {
         display: inline-block;
         text-transform: uppercase;
         box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
-        .label-left, .label-right {
+        .label-left,
+        .label-right {
           display: inline-block;
           padding: 10px 12px;
         }
         .label-left {
           border-right: 1px solid white;
         }
-        img, span {
+        img,
+        span {
           vertical-align: middle;
         }
-
         img {
           margin-right: 8px;
         }
-
         .label-right span {
           vertical-align: sub;
         }
@@ -945,7 +931,6 @@ input.submit-button {
   }
 }
 
-//Contact section
 
 .contact {
   color: $whiteColor;
@@ -955,31 +940,24 @@ input.submit-button {
   background-image: url("../images/contact-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-
   &::before {
     content: '';
     @include dark-overlay;
     background-image: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0.8));
     opacity: .90;
-
   }
-
   .container {
     display: flex;
   }
-
   .inner {
-
     position: relative;
     max-width: 843px;
     margin: auto;
-
     .estimate-submit {
       background: black;
       position: relative;
       padding: 35px 153px;
       margin: -222px auto 52px;
-
       h3 {
         text-align: center;
         @include header3;
@@ -989,27 +967,22 @@ input.submit-button {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
         .form-group {
           position: relative;
           margin-top: 48px;
           padding: 0 28px;
-
           &:last-child {
             margin: 50px 0 0;
             text-align: center;
           }
-
           &.form-half {
             flex: 0 0 50%;
             max-width: 50%;
           }
-
           &.form-full {
             flex: 1 0 100%;
             max-width: 100%;
           }
-
           label {
             display: block;
             margin-bottom: 5px;
@@ -1027,7 +1000,6 @@ input.submit-button {
               color: $whiteColor;
             }
           }
-
           .submit-button {
             max-width: 200px;
           }
@@ -1082,65 +1054,79 @@ input.submit-button {
             }
           }
         }
-
       }
     }
-    h3 {
-      color: $defaultColor;
-      @include header3;
-      @include text-center;
-    }
-
-    .social-icons {
-      text-align: center;
-      margin: 20px auto;
-
-      .list {
-        padding: 0;
-        li {
-          display: inline-block;
-          .icon {
-            width: 28px;
-            height: 28px;
-            background-color: $defaultColor;
-            text-align: center;
-            border-radius: 50%;
-            margin: 0 8px;
-            display: inline-block;
-
-            .icon-mail {
-              position: relative;
-              background-image: url("../images/icons/mail-icon-small.svg");
-              background-repeat: no-repeat;
+    .contact-reversed {
+      display: flex;
+      flex-direction: column;
+      .address {
+        h3 {
+          color: $defaultColor;
+          @include header3;
+          @include text-center;
+          max-width: 60%;
+          margin: auto;
+        }
+        .social-icons {
+          text-align: center;
+          margin: 20px auto;
+          .list {
+            padding: 0;
+            li {
               display: inline-block;
-              width: 16px;
-              height: 13px;
-              vertical-align: middle;
-              margin-top: 3px;
-            }
-
-            .icon-insta {
-              background-image: url("../images/icons/insta-icon-small.svg");
-              background-repeat: no-repeat;
-              display: inline-block;
-              width: 14px;
-              height: 15px;
-              vertical-align: middle;
-              margin-top: 3px;
+              .icon {
+                width: 28px;
+                height: 28px;
+                background-color: $defaultColor;
+                text-align: center;
+                border-radius: 50%;
+                margin: 0 8px;
+                display: inline-block;
+                .icon-mail {
+                  position: relative;
+                  background-image: url("../images/icons/mail-icon-small.svg");
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                  width: 16px;
+                  height: 13px;
+                  vertical-align: middle;
+                  margin-top: 3px;
+                }
+                .icon-insta {
+                  background-image: url("../images/icons/insta-icon-small.svg");
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                  width: 14px;
+                  height: 15px;
+                  vertical-align: middle;
+                  margin-top: 3px;
+                }
+              }
             }
           }
         }
       }
+      .map iframe {
+        margin: 10px auto 67px;
+        height: 465px;
+        width: 100%;
+        border: 0;
+        &.map-overlay {
+          -webkit-filter: grayscale(100%);
+          -moz-filter: grayscale(100%);
+          -ms-filter: grayscale(100%);
+          -o-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+
+      }
     }
 
-    .map iframe {
-      margin: 10px auto 67px;
-      height: 465px;
-      width: 100%;
-    }
+
+
+
   }
 }
-
 
 //Responsive
 @media screen and (max-width: 768px) {
@@ -1176,19 +1162,22 @@ input.submit-button {
           text-align: center;
           margin: auto;
           .welcome-title {
-            font-size: 23px;
+            font-size: 22px;
             line-height: 1.35em;
           }
           .welcome-message {
             font-size: 14px;
             line-height: 135.84%;
+            br {
+              display: none;
+            }
           }
           .call-to-action {
             max-width: 100%;
-            margin: 36px auto;
+            margin: 0;
             text-align: center;
             button.btn {
-              margin-top: 26px;
+              margin: 26px auto 0;
               width: 100%;
               .hidden {
                 display: none;
@@ -1200,7 +1189,7 @@ input.submit-button {
     }
   }
   .projects {
-    padding: 36px 0 325px;
+    padding: 36px 0 282px;
     text-align: center;
     .project-locations {
       display: none;
@@ -1224,6 +1213,7 @@ input.submit-button {
         }
         .hidden-slider {
           display: inline-block;
+          margin-top: 60px;
         }
         .project-details {
           text-align: left;
@@ -1249,10 +1239,14 @@ input.submit-button {
         font-size: 22px;
       }
       .video-container {
-        margin-bottom: 28px;
+        margin-bottom: 0;
         .youtube-video {
-          height: 207px
+          height: 100%;
         }
+      }
+
+      .break-line {
+        margin-bottom: 21px;
       }
       p {
         font-size: 11px;
@@ -1300,18 +1294,24 @@ input.submit-button {
       }
     }
   }
-  .services .container {
-    .service-types {
-      h3{
+  .services {
+    margin-bottom: 55px;
+
+    .container .service-types {
+      h3 {
         font-size: 22px;
       }
+
       .cards {
         flex-direction: column;
+
         .card-block {
           margin-bottom: 80px;
+
           .card-inner {
             margin: -133px 70px auto -1px;
           }
+
           .card-label {
             font-size: 15px;
             height: 40px;
@@ -1321,11 +1321,137 @@ input.submit-button {
         }
       }
     }
+
     .estimate-form,
     .info {
       display: none;
     }
+
+
   }
+
+
+
+
+  .portfolio {
+    background-image: none;
+    margin-bottom: 0;
+    &:before {
+      content: none;
+    }
+    .container  {
+      flex-direction: column;
+      .portfolio-styles {
+        margin: 0;
+        h3{
+          text-align: center;
+          font-size: 22px;
+          margin-top: 0;
+        }
+        .list {
+          display: none;
+        }
+      }
+
+      img.hidden {
+        display: none;
+      }
+      .portfolio-row-1 {
+        margin: 0;
+        img {
+          max-height: 206px;
+          max-width: 100%;
+          object-fit: cover;
+          margin-bottom: 0;
+        }
+
+        .responsive-nav {
+            display: inline-block;
+            position: relative;
+            a {
+              background: $defaultColor;
+              border-radius: 50%;
+              width: 36px;
+              height: 36px;
+              padding: 12px;
+              color: #fff;
+              position: absolute;
+              cursor: pointer;
+              &.slider-prev {
+                top: 90px;
+                margin-left: 14px;
+                padding-left: 9px;
+              }
+              &.slider-next {
+                top: 90px;
+                right: 0;
+                margin-right: 14px;
+                padding-right: 9px;
+              }
+              & img {
+                display: block;
+                margin: auto;
+              }
+            }
+        }
+      }
+    }
+
+
+
+  }
+
+  .testimonials {
+    display: none;
+  }
+
+  .contact {
+    background-image: none;
+    background-color: black;
+    .inner {
+      padding-top: 130px;
+      max-width: 100%;
+      .estimate-submit {
+        padding: 0;
+        margin-top: 0;
+
+        #contact-form {
+          .form-group {
+
+            &.form-half {
+              flex: 0 0 100%;
+              max-width: 100%;
+              padding: 0;
+            }
+
+            &.form-full {
+              padding: 0;
+            }
+            .submit-button {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+      .contact-reversed {
+        flex-direction: column-reverse;
+        .address h3 {
+          max-width: 100%;
+        }
+        .map iframe {
+          margin-bottom: 42px;
+          height: 320px;
+        }
+      }
+
+
+    }
+
+
+  }
+
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {

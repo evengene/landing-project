@@ -203,6 +203,7 @@ input.submit-button {
   height: 707px;
   position: relative;
   color: #ffffff;
+  margin: -1px auto;
 }
 .hero .hero-overlay {
   position: absolute;
@@ -220,7 +221,7 @@ input.submit-button {
   margin-left: 42px;
 }
 .hero .hero-overlay .hero-container .caption .welcome-title {
-  font-family: Yeseva One, cursive;
+  font-family: "Yeseva One", cursive;
   font-size: 40px;
   line-height: 53px;
   text-transform: uppercase;
@@ -239,8 +240,7 @@ input.submit-button {
 }
 
 .projects {
-  padding-top: 107px;
-  padding-bottom: 414px;
+  padding: 107px 0 414px;
   background-color: black;
   color: white;
 }
@@ -629,7 +629,7 @@ input.submit-button {
 .services .estimate-form .estimate-submit h4 {
   text-align: center;
   margin-bottom: 40px;
-  font-family: Nunito Sans;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
   line-height: 26px;
 }
@@ -761,9 +761,7 @@ input.submit-button {
   display: flex;
 }
 .portfolio .container .portfolio-styles {
-  margin-top: 137px;
-  margin-bottom: 0;
-  margin-right: 246px;
+  margin: 137px 246px 0 auto;
   z-index: 1;
 }
 .portfolio .container .portfolio-styles h3 {
@@ -785,18 +783,22 @@ input.submit-button {
   color: #e3b873;
   border-bottom: 1px solid #e3b873;
 }
-.portfolio .container .portfolio-row-1, .portfolio .container .portfolio-row-2 {
+.portfolio .container .portfolio-row-1,
+.portfolio .container .portfolio-row-2 {
   display: flex;
   flex-direction: column;
   z-index: 1;
 }
-.portfolio .container .portfolio-row-1 img, .portfolio .container .portfolio-row-2 img {
+.portfolio .container .portfolio-row-1 img,
+.portfolio .container .portfolio-row-2 img {
   max-width: 353px;
   margin-bottom: 40px;
 }
 .portfolio .container .portfolio-row-1 {
-  margin-right: 45px;
-  margin-top: -40px;
+  margin: -40px 45px 0 0;
+}
+.portfolio .container .portfolio-row-1 .responsive-nav {
+  display: none;
 }
 .portfolio .container .portfolio-row-2 {
   margin-top: -112px;
@@ -885,14 +887,16 @@ input.submit-button {
   text-transform: uppercase;
   box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
 }
-.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-left, .testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-right {
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-left,
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-right {
   display: inline-block;
   padding: 10px 12px;
 }
 .testimonials .testimonial-cards .testimonial-card-block .testimonials-label .label-left {
   border-right: 1px solid white;
 }
-.testimonials .testimonial-cards .testimonial-card-block .testimonials-label img, .testimonials .testimonial-cards .testimonial-card-block .testimonials-label span {
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label img,
+.testimonials .testimonial-cards .testimonial-card-block .testimonials-label span {
   vertical-align: middle;
 }
 .testimonials .testimonial-cards .testimonial-card-block .testimonials-label img {
@@ -1036,25 +1040,31 @@ input.submit-button {
 .contact .inner .estimate-submit #contact-form .form-checkbox input[type=checkbox]:checked + label:after {
   display: none;
 }
-.contact .inner h3 {
+.contact .inner .contact-reversed {
+  display: flex;
+  flex-direction: column;
+}
+.contact .inner .contact-reversed .address h3 {
   color: #e3b873;
   font-size: 18px;
   line-height: 25px;
   text-transform: uppercase;
   margin-bottom: 0;
   text-align: center;
+  max-width: 60%;
+  margin: auto;
 }
-.contact .inner .social-icons {
+.contact .inner .contact-reversed .address .social-icons {
   text-align: center;
   margin: 20px auto;
 }
-.contact .inner .social-icons .list {
+.contact .inner .contact-reversed .address .social-icons .list {
   padding: 0;
 }
-.contact .inner .social-icons .list li {
+.contact .inner .contact-reversed .address .social-icons .list li {
   display: inline-block;
 }
-.contact .inner .social-icons .list li .icon {
+.contact .inner .contact-reversed .address .social-icons .list li .icon {
   width: 28px;
   height: 28px;
   background-color: #e3b873;
@@ -1063,7 +1073,7 @@ input.submit-button {
   margin: 0 8px;
   display: inline-block;
 }
-.contact .inner .social-icons .list li .icon .icon-mail {
+.contact .inner .contact-reversed .address .social-icons .list li .icon .icon-mail {
   position: relative;
   background-image: url("../images/icons/mail-icon-small.svg");
   background-repeat: no-repeat;
@@ -1073,7 +1083,7 @@ input.submit-button {
   vertical-align: middle;
   margin-top: 3px;
 }
-.contact .inner .social-icons .list li .icon .icon-insta {
+.contact .inner .contact-reversed .address .social-icons .list li .icon .icon-insta {
   background-image: url("../images/icons/insta-icon-small.svg");
   background-repeat: no-repeat;
   display: inline-block;
@@ -1082,10 +1092,18 @@ input.submit-button {
   vertical-align: middle;
   margin-top: 3px;
 }
-.contact .inner .map iframe {
+.contact .inner .contact-reversed .map iframe {
   margin: 10px auto 67px;
   height: 465px;
   width: 100%;
+  border: 0;
+}
+.contact .inner .contact-reversed .map iframe.map-overlay {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 @media screen and (max-width: 768px) {
@@ -1125,20 +1143,23 @@ input.submit-button {
     margin: auto;
   }
   .hero .hero-overlay .hero-container .caption .welcome-title {
-    font-size: 23px;
+    font-size: 22px;
     line-height: 1.35em;
   }
   .hero .hero-overlay .hero-container .caption .welcome-message {
     font-size: 14px;
     line-height: 135.84%;
   }
+  .hero .hero-overlay .hero-container .caption .welcome-message br {
+    display: none;
+  }
   .hero .hero-overlay .hero-container .caption .call-to-action {
     max-width: 100%;
-    margin: 36px auto;
+    margin: 0;
     text-align: center;
   }
   .hero .hero-overlay .hero-container .caption .call-to-action button.btn {
-    margin-top: 26px;
+    margin: 26px auto 0;
     width: 100%;
   }
   .hero .hero-overlay .hero-container .caption .call-to-action button.btn .hidden {
@@ -1146,7 +1167,7 @@ input.submit-button {
   }
 
   .projects {
-    padding: 36px 0 325px;
+    padding: 36px 0 282px;
     text-align: center;
   }
   .projects .project-locations {
@@ -1173,6 +1194,7 @@ input.submit-button {
   }
   .projects .content .project-description .hidden-slider {
     display: inline-block;
+    margin-top: 60px;
   }
   .projects .content .project-description .project-details {
     text-align: left;
@@ -1196,10 +1218,13 @@ input.submit-button {
     font-size: 22px;
   }
   .camera-control .wrap .video-container {
-    margin-bottom: 28px;
+    margin-bottom: 0;
   }
   .camera-control .wrap .video-container .youtube-video {
-    height: 207px;
+    height: 100%;
+  }
+  .camera-control .wrap .break-line {
+    margin-bottom: 21px;
   }
   .camera-control .wrap p {
     font-size: 11px;
@@ -1246,6 +1271,9 @@ input.submit-button {
     top: 0;
   }
 
+  .services {
+    margin-bottom: 55px;
+  }
   .services .container .service-types h3 {
     font-size: 22px;
   }
@@ -1264,9 +1292,110 @@ input.submit-button {
     padding: 6px 16px;
     line-height: 138.6%;
   }
-  .services .container .estimate-form,
-.services .container .info {
+  .services .estimate-form,
+.services .info {
     display: none;
+  }
+
+  .portfolio {
+    background-image: none;
+    margin-bottom: 0;
+  }
+  .portfolio:before {
+    content: none;
+  }
+  .portfolio .container {
+    flex-direction: column;
+  }
+  .portfolio .container .portfolio-styles {
+    margin: 0;
+  }
+  .portfolio .container .portfolio-styles h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  .portfolio .container .portfolio-styles .list {
+    display: none;
+  }
+  .portfolio .container img.hidden {
+    display: none;
+  }
+  .portfolio .container .portfolio-row-1 {
+    margin: 0;
+  }
+  .portfolio .container .portfolio-row-1 img {
+    max-height: 206px;
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+  .portfolio .container .portfolio-row-1 .responsive-nav {
+    display: inline-block;
+    position: relative;
+  }
+  .portfolio .container .portfolio-row-1 .responsive-nav a {
+    background: #e3b873;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 12px;
+    color: #fff;
+    position: absolute;
+    cursor: pointer;
+  }
+  .portfolio .container .portfolio-row-1 .responsive-nav a.slider-prev {
+    top: 90px;
+    margin-left: 14px;
+    padding-left: 9px;
+  }
+  .portfolio .container .portfolio-row-1 .responsive-nav a.slider-next {
+    top: 90px;
+    right: 0;
+    margin-right: 14px;
+    padding-right: 9px;
+  }
+  .portfolio .container .portfolio-row-1 .responsive-nav a img {
+    display: block;
+    margin: auto;
+  }
+
+  .testimonials {
+    display: none;
+  }
+
+  .contact {
+    background-image: none;
+    background-color: black;
+  }
+  .contact .inner {
+    padding-top: 130px;
+    max-width: 100%;
+  }
+  .contact .inner .estimate-submit {
+    padding: 0;
+    margin-top: 0;
+  }
+  .contact .inner .estimate-submit #contact-form .form-group.form-half {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .contact .inner .estimate-submit #contact-form .form-group.form-full {
+    padding: 0;
+  }
+  .contact .inner .estimate-submit #contact-form .form-group .submit-button {
+    max-width: 100%;
+  }
+  .contact .inner .contact-reversed {
+    flex-direction: column-reverse;
+  }
+  .contact .inner .contact-reversed .address h3 {
+    max-width: 100%;
+  }
+  .contact .inner .contact-reversed .map iframe {
+    margin-bottom: 42px;
+    height: 320px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1440px) {
