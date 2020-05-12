@@ -61,6 +61,10 @@ sup {
   vertical-align: text-bottom;
 }
 
+label {
+  cursor: pointer;
+}
+
 //Repeated Styles
 @mixin fontNunito {
   font-family: "Nunito Sans", sans-serif;
@@ -184,7 +188,7 @@ input.submit-button {
   color: $whiteColor;
   background: $defaultColor;
   padding: 10px 21px;
-  max-width: fit-content;
+  max-width: 100%;
   height: 54px;
   box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
   @include fontYeseva;
@@ -1416,8 +1420,38 @@ input.submit-button {
   }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .portfolio-styles {
+    display: none;
+  }
+  .portfolio .container {
+    .portfolio-row-1 {
+      margin: -40px auto;
+    }
+    .portfolio-row-2 {
+      margin: -112px auto 0;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .container {
     max-width: 100%;
+  }
+  .phone-number {
+    display: none;
+  }
+  .services .container .service-types .cards {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .card-block {
+      margin-bottom: 100px;
+    }
+  }
+  .services .estimate-form {
+    margin-top: 70px;
+  }
+  .portfolio .container .portfolio-styles {
+    margin: 50px;
   }
 }
