@@ -73,13 +73,13 @@
             <nav class="project-locations">
                 <ul>
                     <li>
-                        <a>Rostov-on-Don, Admiral</a>
+                        <a data-index="0" class="navi active">Rostov-on-Don, Admiral</a>
                     </li>
                     <li>
-                        <a>Sochi Thieves</a>
+                        <a data-index="1" class="navi">Sochi Thieves</a>
                     </li>
                     <li>
-                        <a>Rostov-on-Don Patriotic</a>
+                        <a data-index="2" class="navi">Rostov-on-Don Patriotic</a>
                     </li>
                 </ul>
             </nav>
@@ -90,25 +90,32 @@
                     </h2>
                     <p><span>Only a small part of the work performed by our company is presented</span> <span>on the site. For 14 years on in the construction</span> market we have made happy more than 1000 families</p>
                     <div class="hidden-slider">
-                        <a class="slider-prev" href="#">
-                            <img src="./assets/images/slider/hidden-arrow-left.svg"></a>
-                        <a class="slider-next" href="#">
+                        <a class="slider-prev">
+                            <img src="./assets/images/slider/hidden-arrow-left.svg" ></a>
+                        <a class="slider-next">
                             <img src="./assets/images/slider/hidden-arrow-right.svg"></a>
-                        <img alt="portfolio" class="hidden-img" src="assets/images/slider/slider2thumb.jpg">
+                        <div class="hidden-img">
                     </div>
                     <div class="project-details">
                         <div class="project-features">
                             <h3>City:</h3>
-                            Rostov-on-Don<br>
-                            LCD admiral
+                            <span class="city-text">
+                                Rostov-on-Don
+                                LCD admiral
+                            </span>
                         </div>
                         <div class="project-features">
                             <h3>apartment area:</h3>
+                            <span class="area-text">
                             81 m2
+                            </span>
                         </div>
                         <div class="project-features">
                             <h3>Repair time:</h3>
-                            3.5 months
+                            <span class="repair-text">
+                                3.5 months
+                            </span>
+
                         </div>
                         <div class="project-features">
                             <h3>Repair Cost:</h3>
@@ -118,7 +125,10 @@
                     <nav class="slider-navigation">
                         <ul>
                             <li>
-                                <a class="arrow left" href="#"><img src="./assets/images/slider/arrow-left.svg"></a>
+                                <div class="arrow left"><img src="./assets/images/slider/arrow-left.svg"></div>
+                            </li>
+                            <li>
+                                <a class="dot active"></a>
                             </li>
                             <li>
                                 <a class="dot"></a>
@@ -127,10 +137,7 @@
                                 <a class="dot"></a>
                             </li>
                             <li>
-                                <a class="dot"></a>
-                            </li>
-                            <li>
-                                <a class="arrow right" href="#"><img src="./assets/images/slider/arrow-right.svg"></a>
+                                <div class="arrow right"><img src="./assets/images/slider/arrow-right.svg"></div>
                             </li>
                         </ul>
                     </nav>
@@ -482,5 +489,10 @@
     </div>
 </footer>
         <script src="_misc/js.js"></script>
+        <script src="_misc/js-2-DOM.js"></script>
+<!--        <script src="./src/slider.js"></script>-->
+        <script src="./src/samostoyatelno.js"></script>
+
+
     </body>
 </html>

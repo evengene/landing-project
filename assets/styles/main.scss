@@ -296,12 +296,13 @@ input.submit-button {
           line-height: 19px;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.3);
-          &:hover {
+          &:hover, &.active {
             color: $defaultColor;
             padding-bottom: 7px;
             border-bottom: 1px solid $defaultColor;
             @include transition(all 0.3s ease-in-out);
           }
+
         }
       }
     }
@@ -342,12 +343,13 @@ input.submit-button {
           position: absolute;
           cursor: pointer;
           &.slider-prev {
-            top: 40%;
+            top: 20%;
+            left: 0;
             margin-left: 14px;
             padding-left: 9px;
           }
           &.slider-next {
-            top: 40%;
+            top: 20%;
             right: 0;
             margin-right: 14px;
             padding-right: 9px;
@@ -356,6 +358,13 @@ input.submit-button {
             display: block;
             margin: auto;
           }
+        }
+        .hidden-img {
+          background-image: url("../images/slider/slider1.jpg");
+          background-size: cover;
+          width: 340px;
+          height: 200px;
+          display: inline-block;
         }
       }
       .project-details {
@@ -371,6 +380,16 @@ input.submit-button {
             @include header3;
             color: $defaultColor;
             margin: 34px auto 9px;
+          }
+          span {
+            display: inline-block;
+
+            &.city-text {
+              max-width: 100px;
+              &.narrow {
+                max-width: 50px;
+              }
+            }
           }
         }
       }
@@ -401,8 +420,12 @@ input.submit-button {
               border-radius: 50%;
               display: inline-block;
               transition: background-color 0.6s ease;
-              &:hover {
+              &:hover, &:focus {
                 background-color: #FFFFFF;
+              }
+              &.active {
+                background-color: #FFFFFF;
+
               }
             }
           }
@@ -1212,10 +1235,12 @@ input.submit-button {
           margin-top: 60px;
         }
         .project-details {
-          text-align: left;
-          .project-features h3 {
-            font-size: 14px;
-            line-height: 138.6%;
+          text-align: center;
+          .project-features {
+            h3 {
+              font-size: 14px;
+              line-height: 138.6%;
+            }
           }
         }
         .slider-navigation {

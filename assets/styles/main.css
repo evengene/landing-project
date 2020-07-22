@@ -267,7 +267,7 @@ input.submit-button {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
 }
-.projects .project-locations ul li a:hover {
+.projects .project-locations ul li a:hover, .projects .project-locations ul li a.active {
   color: #e3b873;
   padding-bottom: 7px;
   border-bottom: 1px solid #e3b873;
@@ -314,12 +314,13 @@ input.submit-button {
   cursor: pointer;
 }
 .projects .content .project-description .hidden-slider a.slider-prev {
-  top: 40%;
+  top: 20%;
+  left: 0;
   margin-left: 14px;
   padding-left: 9px;
 }
 .projects .content .project-description .hidden-slider a.slider-next {
-  top: 40%;
+  top: 20%;
   right: 0;
   margin-right: 14px;
   padding-right: 9px;
@@ -327,6 +328,13 @@ input.submit-button {
 .projects .content .project-description .hidden-slider a img {
   display: block;
   margin: auto;
+}
+.projects .content .project-description .hidden-slider .hidden-img {
+  background-image: url("../images/slider/slider1.jpg");
+  background-size: cover;
+  width: 340px;
+  height: 200px;
+  display: inline-block;
 }
 .projects .content .project-description .project-details {
   display: flex;
@@ -346,6 +354,15 @@ input.submit-button {
   margin-bottom: 0;
   color: #e3b873;
   margin: 34px auto 9px;
+}
+.projects .content .project-description .project-details .project-features span {
+  display: inline-block;
+}
+.projects .content .project-description .project-details .project-features span.city-text {
+  max-width: 100px;
+}
+.projects .content .project-description .project-details .project-features span.city-text.narrow {
+  max-width: 50px;
 }
 .projects .content .project-description .slider-navigation {
   display: inline-block;
@@ -376,7 +393,10 @@ input.submit-button {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-.projects .content .project-description .slider-navigation ul li .dot:hover {
+.projects .content .project-description .slider-navigation ul li .dot:hover, .projects .content .project-description .slider-navigation ul li .dot:focus {
+  background-color: #FFFFFF;
+}
+.projects .content .project-description .slider-navigation ul li .dot.active {
   background-color: #FFFFFF;
 }
 .projects .content .project-image {
@@ -1201,7 +1221,7 @@ input.submit-button {
     margin-top: 60px;
   }
   .projects .content .project-description .project-details {
-    text-align: left;
+    text-align: center;
   }
   .projects .content .project-description .project-details .project-features h3 {
     font-size: 14px;
