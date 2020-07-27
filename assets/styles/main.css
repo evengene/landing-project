@@ -314,13 +314,13 @@ input.submit-button {
   cursor: pointer;
 }
 .projects .content .project-description .hidden-slider a.slider-prev {
-  top: 20%;
+  top: 40%;
   left: 0;
   margin-left: 14px;
   padding-left: 9px;
 }
 .projects .content .project-description .hidden-slider a.slider-next {
-  top: 20%;
+  top: 40%;
   right: 0;
   margin-right: 14px;
   padding-right: 9px;
@@ -383,6 +383,7 @@ input.submit-button {
 .projects .content .project-description .slider-navigation ul li .arrow img {
   width: 42px;
   vertical-align: middle;
+  cursor: pointer;
 }
 .projects .content .project-description .slider-navigation ul li .dot {
   height: 10px;
@@ -403,6 +404,13 @@ input.submit-button {
   flex-basis: 50%;
   background-image: url("../images/slider/slider1.jpg");
   background-size: cover;
+}
+.projects .content .project-image.showing {
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  transition: all 3s ease;
 }
 
 .camera-control {

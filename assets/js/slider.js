@@ -1,74 +1,94 @@
-//slides [ {}, {}, {} ]
+/*
+JavaScript Portfolio Slideshow
+*/
 
-let slides = [
-
-        {
-            index: 0,
-            slide: './assets/images/slider/slider1.jpg',
-            city: 'Rostov-on-Don LCD admiral',
-            apartmentArea: '81 m2',
-            repairTime: '3.5 month',
-        },
-
-        {
-            index: 1,
-            slide: './assets/images/slider/slider2.jpg',
-            city: 'Sochi Thieves',
-            apartmentArea: '105 m2',
-            repairTime: '4 month',
-            narrow: true,
-
-        },
-
-        {
-            index: 2,
-            slide: './assets/images/slider/slider3.jpg',
-            city: 'Rostov-on-Don Patriotic',
-            apartmentArea: '93 m2',
-            repairTime: '3 month',
-        },
-    ],
-    currentSlide = 0;
-
-// Desktop
-let slideHTML = document.querySelector('.project-image');
+// Find HTML elements
+const slideHTML = document.querySelector('.project-image');
 const prev = document.querySelector('.arrow.left');
 const next = document.querySelector('.arrow.right');
 const dots = document.querySelectorAll('.dot');
-
 const cityText = document.querySelector('.city-text');
 const areaText = document.querySelector('.area-text');
 const repairText = document.querySelector('.repair-text');
+const navigation = document.querySelectorAll('.navi');
 
-// Smart phone
-let hiddenSlide = document.querySelector('.hidden-img');
-const nextResp = document.querySelector('.slider-next');
-const prevResp = document.querySelector('.slider-prev');
+// Slider object
+const slides = [{
+    index: 0,
+    slide: './assets/images/slider/slider1.jpg',
+    city: 'Rostov-on-Don LCD admiral',
+    apartmentArea: '81 m2',
+    repairTime: '3.5 month',
+},
+    {
+        index: 1,
+        slide: './assets/images/slider/slider2.jpg',
+        city: 'Sochi Thieves',
+        apartmentArea: '105 m2',
+        repairTime: '4 month',
+        narrow: true,
 
-nextResp.addEventListener('click',
-    () => {
-        currentSlide += 1;
-        if (currentSlide === slides.length) {
-            currentSlide = 0;
-        }
-        changeRespBg(currentSlide);
-        changeText(currentSlide);
+    },
+    {
+        index: 2,
+        slide: './assets/images/slider/slider3.jpg',
+        city: 'Rostov-on-Don Patriotic',
+        apartmentArea: '93 m2',
+        repairTime: '3 month',
+    }
+];
 
+// Define a variable for currently selected slide
+let currentSlide = 0;
+
+// Set click listener for arrow navigation
+next.onclick = function () {
+    currentSlide += 1;
+    if (currentSlide === slides.length) {
+        currentSlide = 0;
+    }
+    changeNavigation(currentSlide);
+    changeDots(currentSlide);
+    changeBg(currentSlide);
+    changeText(currentSlide);
+};
+
+prev.onclick = function () {
+    currentSlide -= 1;
+    if (currentSlide === -1) {
+        currentSlide = slides.length - 1;
+    }
+    changeNavigation(currentSlide);
+    changeDots(currentSlide);
+    changeBg(currentSlide);
+    changeText(currentSlide);
+};
+
+// Set click listener for dot navigation
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        nextSlide(index);
+        changeDots(index);
+        changeNavigation(index);
     });
+});
 
-function changeRespBg(index) {
-    hiddenSlide.style.backgroundImage = `url(${slides[index].slide})`;
-}/*
+// Set click listener for navigation tabs
+navigation.forEach((li, index) => {
+    li.addEventListener('click', () => {
+        nextSlide(index);
+        changeNavigation(index);
+        changeDots(index);
+    });
+});
 
 
-*/
-
-//передадим индекс - наш номер слайда
 function changeBg(index) {
     slideHTML.style.backgroundImage = `url(${slides[index].slide})`;
-
+    slideHTML.style.transition = 'all 0.5s';
 }
-/* Text */
+
 function changeText(index) {
     if (slides[index].narrow) {
         cityText.classList.add('narrow')
@@ -81,93 +101,56 @@ function changeText(index) {
     repairText.innerHTML = slides[index].repairTime;
 }
 
-/* 1. Dots */
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        selectSlide(dots, dot, index);
+function changeNavigation(index) {
+    navigation.forEach((item) => {
+        item.classList.remove('active')
     });
-});
+    navigation[index].classList.add('active');
+}
 
-/* 2. Navigation Text */
+function changeDots(index) {
+    dots.forEach((item) => {
+        item.classList.remove('active')
+    });
+    dots[index].classList.add('active');
+}
 
-let navigation = document.querySelectorAll('.navi');
-navigation.forEach((element, index) =>
-    element.addEventListener('click', () => {
-        selectSlide(navigation, element, index);
-
-
-        dots.forEach((array)=>{
-            array.classList.remove('active');
-        })
-
-    }));
-
-
-
-
-/* Arrows */
-next.onclick = function () {
-    currentSlide += 1;
-    if (currentSlide === slides.length) {
-        currentSlide = 0;
+function nextSlide(index) {
+    currentSlide = index;
+    if (index === slides.length) {
+        index = 0;
     }
-    changeBg(currentSlide);
-    changeText(currentSlide);
+    changeBg(index);
+    changeText(index);
+}
 
-};
 
-prev.onclick = function () {
+// Code to work with responsive slider
+
+let hiddenSlide = document.querySelector('.hidden-img');
+const nextResp = document.querySelector('.slider-next');
+const prevResp = document.querySelector('.slider-prev');
+
+nextResp.addEventListener('click',
+    () => {
+        currentSlide += 1;
+        if (currentSlide === slides.length) {
+            currentSlide = 0;
+        }
+        changeRespBg(currentSlide);
+        changeText(currentSlide);
+    });
+
+
+prevResp.onclick = function () {
     currentSlide -= 1;
     if (currentSlide === -1) {
         currentSlide = slides.length - 1;
     }
-    changeBg(currentSlide);
+    changeRespBg(currentSlide);
     changeText(currentSlide);
-
 };
 
-
-//1) меняем статус
-function showActiveSlide(array, arrayEl) {
-    array.forEach((el) => {
-        el.classList.remove('active')
-    });
-    arrayEl.classList.add('active');
+function changeRespBg(index) {
+    hiddenSlide.style.backgroundImage = `url(${slides[index].slide})`;
 }
-
-//2) то что происходит onclick
-function selectSlide(array, arrayEl, index) {
-    showActiveSlide(array, arrayEl);
-    currentSlide = index;
-    console.log(index);
-    nextSlide(array, arrayEl);
-}
-
-//3 меняем слайд
-function nextSlide(array, arrayEl){
-    currentSlide += 1;
-    if (currentSlide === slides.length) {
-        currentSlide = 0;
-    }
-    changeBg(currentSlide);
-    changeText(currentSlide);
-    showActiveSlide(array, arrayEl);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
