@@ -14,14 +14,12 @@ const navigation = document.querySelectorAll('.navi');
 
 // Slider object
 const slides = [{
-    index: 0,
     slide: './assets/images/slider/slider1.jpg',
     city: 'Rostov-on-Don LCD admiral',
     apartmentArea: '81 m2',
     repairTime: '3.5 month',
 },
     {
-        index: 1,
         slide: './assets/images/slider/slider2.jpg',
         city: 'Sochi Thieves',
         apartmentArea: '105 m2',
@@ -30,7 +28,6 @@ const slides = [{
 
     },
     {
-        index: 2,
         slide: './assets/images/slider/slider3.jpg',
         city: 'Rostov-on-Don Patriotic',
         apartmentArea: '93 m2',
