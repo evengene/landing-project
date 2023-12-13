@@ -14,10 +14,8 @@
     </a>
 </p>
 
-
-
 <p align="center">
-  <img src="./assets/images/cover.png" alt="Your Image Description">
+  <img src="./assets/images/cover.png" alt="Cover">
 </p>
 
 ## Demo
